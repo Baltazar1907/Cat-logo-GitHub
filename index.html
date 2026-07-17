@@ -82,20 +82,44 @@
             }
         }
 
-        .blob-shape-1 { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-        .blob-shape-2 { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
-        .blob-shape-3 { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        .blob-shape-4 { border-radius: 50% 50% 30% 70% / 60% 30% 70% 40%; }
+        .blob-shape-1 {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f2f2; }
-        ::-webkit-scrollbar-thumb { background: #0caea4; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #00837b; }
+        .blob-shape-2 {
+            border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+        }
+
+        .blob-shape-3 {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        .blob-shape-4 {
+            border-radius: 50% 50% 30% 70% / 60% 30% 70% 40%;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f2f2;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0caea4;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00837b;
+        }
     </style>
 </head>
 
 <body class="font-sans text-gray-800 antialiased">
 
+    <!-- Barra de Ferramentas -->
     <div class="no-print fixed top-0 left-0 w-full bg-white shadow-md z-50 p-4 flex justify-between items-center">
         <div class="flex items-center gap-2 text-brand-dark font-bold">
             <i data-lucide="book-open" class="text-brand-teal"></i>
@@ -111,6 +135,7 @@
     <!-- Container Principal do Catálogo -->
     <div class="max-w-5xl mx-auto pt-24 print:pt-0" id="catalog-container">
 
+        <!-- CAPA EDITORIAL -->
         <div class="bg-white min-h-[297mm] flex flex-col justify-between items-center text-center shadow-xl mb-12 print:shadow-none print:mb-0 relative overflow-hidden page-break">
             <img src="capa.png" alt="Modelo Capa Buona Vita" class="absolute inset-0 w-full h-full object-cover object-top z-0" onerror="this.style.display='none'">
             <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white/95 z-0 pointer-events-none"></div>
@@ -135,6 +160,7 @@
     </div>
 
     <script>
+        // BANCO DE DADOS 100% CONSOLIDADO
         const catalogData = [
             {
                 title: "Volume 1",
@@ -246,7 +272,7 @@
                     },
                     {
                         name: "Máscara Descongestionante 500g", vol: "500g", de: "R$ 147,40", cartao: "R$ 76,90", pix: "R$ 73,06",
-                        desc: "Máscara dermocosmética vegana desenvolvida para acalmar, descongestionar e restaurar a pele após limpezas de pele, extração de comedões, drenagem de acne, depilação e demais procedimentos estéticos.",
+                        desc: "Máscara dermocosmética vegana desenvolvida para acalmar, descongestionar e restaurar a pele após limpezas de pele, extração de comedões, drenagem de acne, depilação e demais procedimentos estéticos. Rica em Betaglucan e ativos vegetais.",
                         ativos: "Betaglucan • Extrato de Camomila 20 mg/g • Extrato de Erva-Doce 20 mg/g • Extrato de Sálvia 20 mg/g • Extrato de Melissa 20 mg/g • Extrato de Ginkgo Biloba 20 mg/g.", 
                         dica: "Após o procedimento estético, aplique uma camada uniforme e deixe agir por 20 minutos. Remova completamente. Após a depilação, aplique uma fina camada e deixe absorver. Também pode ser base para drenagem linfática manual.", 
                         rendimento: "84 aplicações",
@@ -281,7 +307,7 @@
                     {
                         name: "Luminance 5X 30g", vol: "30g", de: "R$ 137,60", cartao: "R$ 82,50", pix: "R$ 78,38", promo2: "R$ 71,80",
                         protocolo: ["Emulsão de Limpeza", "Luminance 5X", "Solar Hidra Active"],
-                        desc: "Sérum multifuncional desenvolvido para prevenir e tratar manchas solares, hormonais, pós-inflamatórias, senis e melasma. Atua em todas as fases da produção da melanina, promovendo uniformização do tom da pele, luminosidade e prevenção de novas hipercromias.",
+                        desc: "Sérum multifuncional desenvolvido para prevenir e tratar manchas solares, hormonais, pós-inflamatórias, senis e melasma. Atua em todas as fases da produção da melanina, promovendo uniformização do tom da pele, luminosidade e prevenção de novas hipercromias. Seus ativos oferecem 5 benefícios em um único produto.",
                         ativos: "Niacinamida 20 mg/g • Biofoetida 20 mg/g • Belides 10 mg/g • Óleo de Rosa Mosqueta 10 mg/g.", 
                         dica: "Aplicar de 1 a 2 vezes ao dia sobre a pele limpa. Em protocolos profissionais pode ser associado à ionização com corrente galvânica, eletroporação, microcorrentes, LED e microagulhamento. Uso diário de protetor solar.", 
                         rendimento: "60 aplicações"
@@ -289,7 +315,7 @@
                     {
                         name: "Clear Peel 140ml", vol: "140ml", de: "R$ 147,90", cartao: "R$ 78,90", pix: "R$ 74,96", promo2: "R$ 74,20",
                         protocolo: ["Emulsão de Limpeza", "Clear Peel", "Vita C+A"],
-                        desc: "O Clear Peel é um peeling químico desenvolvido para promover uma renovação celular segura, uniforme e eficaz. Sua fórmula combina Ácido Glicólico 10% com os ácidos Málico, Cítrico e Lático, proporcionando uma esfoliação química que acelera a formação de uma nova camada de pele.",
+                        desc: "O Clear Peel é um peeling químico desenvolvido para promover uma renovação celular segura, uniforme e eficaz. Sua fórmula combina Ácido Glicólico 10% com os ácidos Málico, Cítrico e Lático, proporcionando uma esfoliação química que acelera a formação de uma nova camada de pele, melhora a textura, reduz imperfeições e devolve luminosidade à pele.",
                         ativos: "Ácido Glicólico 100 mg/g • Biofruits (AHAs) 20 mg/g.", 
                         dica: "Aplicar uma fina camada sobre a pele limpa e seca, deixar agir conforme avaliação profissional e remover completamente com água. Finalizar obrigatoriamente com protetor solar.", 
                         rendimento: "65 aplicações"
@@ -297,7 +323,7 @@
                     {
                         name: "Sérum Mandélico 60ml", vol: "60ml", de: "R$ 55,10", cartao: "R$ 33,10", pix: "R$ 31,45",
                         protocolo: ["Emulsão de Limpeza", "Sérum Mandélico", "Luminance 5X"],
-                        desc: "Peeling químico vegano à base de Ácido Mandélico 10%, desenvolvido para promover renovação celular, uniformizar o tom da pele e auxiliar no tratamento da acne, melasma, hiperpigmentações, estrias e fotoenvelhecimento.",
+                        desc: "Peeling químico vegano à base de Ácido Mandélico 10%, desenvolvido para promover renovação celular, uniformizar o tom da pele e auxiliar no tratamento da acne, melasma, hiperpigmentações, estrias e fotoenvelhecimento. Sua molécula de maior peso molecular proporciona ação gradual e segura, sendo indicado para todos os fototipos, inclusive peles sensíveis e gestantes.",
                         ativos: "Ácido Mandélico 100 mg/g (10%).", 
                         dica: "Com a pele completamente seca, aplicar uma fina camada sobre a região desejada, deixar agir por aproximadamente 10 minutos e enxaguar abundantemente. Durante o tratamento, recomenda-se o uso diário de protetor solar.", 
                         rendimento: "65 aplicações",
@@ -306,7 +332,7 @@
                     {
                         name: "Vita C+A 60g", vol: "60g", de: "R$ 159,00", cartao: "R$ 83,00", pix: "R$ 78,85", promo2: "R$ 69,90",
                         protocolo: ["Emulsão de Limpeza", "Vita C+A", "Sérum C+D"],
-                        desc: "O Vita C+A é um dermocosmético multifuncional que combina nanotecnologia de Vitamina C, Retinol-Like vegetal e enzimas de abóbora para promover uma renovação suave e eficaz da pele. Auxilia no clareamento de manchas, estimula a produção de colágeno e reduz rugas.",
+                        desc: "O Vita C+A é um dermocosmético multifuncional que combina nanotecnologia de Vitamina C, Retinol-Like vegetal e enzimas de abóbora para promover uma renovação suave e eficaz da pele. Auxilia no clareamento de manchas, estimula a produção de colágeno e reduz rugas e linhas de expressão, proporcionando uma pele mais uniforme e iluminada.",
                         ativos: "Nanovetor de Vitamina C 20 mg/g • Revinage® 10 mg/g • Pumpkin Enzyme 100 mg/g.", 
                         dica: "No uso profissional, aplicar uma camada uniforme, deixar agir por 20 minutos e remover. No home care, aplicar uma fina camada antes de dormir, sem remover. Utilizar protetor solar durante o dia.", 
                         rendimento: "60 aplicações"
@@ -314,7 +340,7 @@
                     {
                         name: "Sérum ProSec 50ml", vol: "50ml", de: "R$ 159,90", cartao: "R$ 79,90", pix: "R$ 75,91",
                         protocolo: ["Normaclean", "ProSec", "Solar Hidra Active FPS 30"],
-                        desc: "O Sérum ProSec foi desenvolvido para o cuidado diário das peles oleosas e acneicas. Controla a produção excessiva de oleosidade, reduz poros dilatados, auxilia na diminuição de cravos e espinhas e proporciona efeito matte de longa duração.",
+                        desc: "O Sérum ProSec foi desenvolvido para o cuidado diário das peles oleosas e acneicas. Controla a produção excessiva de oleosidade, reduz poros dilatados, auxilia na diminuição de cravos e espinhas e proporciona efeito matte de longa duração. Sua ação calmante ajuda a prevenir marcas e favorece a recuperação da pele.",
                         ativos: "Cytobiol Iris 40 mg/g • Niacinamida 30 mg/g • Ácido Salicílico 20 mg/g • Alfa Bisabolol 3 mg/g • Alantoína 1 mg/g.", 
                         dica: "Aplicar duas vezes ao dia sobre a pele limpa ou associar aos protocolos estéticos.", 
                         rendimento: "50 aplicações"
@@ -346,7 +372,7 @@
                     {
                         name: "Tenso Active 50g", vol: "50g", de: "R$ 153,60", cartao: "R$ 79,90", pix: "R$ 75,91",
                         protocolo: ["Gel Creme Nanocápsulas", "Tenso Active", "Solar Hidra Active FPS 30"],
-                        desc: "O Tenso Active promove efeito tensor imediato e progressivo, melhorando a firmeza, hidratação e elasticidade da pele. Sua fórmula associa Nano DMAE, Raffermine e Carnosine para combater a flacidez.",
+                        desc: "O Tenso Active promove efeito tensor imediato e progressivo, melhorando a firmeza, hidratação e elasticidade da pele. Sua fórmula associa Nano DMAE, Raffermine e Carnosine para combater a flacidez, reduzir linhas de expressão e estimular a renovação das fibras de colágeno.",
                         ativos: "Raffermine 30 mg/g • Zemea 20 mg/g • Nanovetor DMAE 15 mg/g • Vitamina E 10 mg/g • Carnosine 2 mg/g.", 
                         dica: "Aplicar preferencialmente à noite sobre a pele limpa, massageando até completa absorção.", 
                         rendimento: "60 aplicações"
@@ -354,7 +380,7 @@
                     {
                         name: "Sérum DMAE 60ml", vol: "60ml", de: "R$ 143,00", cartao: "R$ 74,65", pix: "R$ 70,92", promo2: "3 por R$ 59,90 cada",
                         protocolo: ["Ionto Vita Tônus", "Sérum DMAE", "Stone Gold"],
-                        desc: "O Sérum DMAE promove contração celular imediata, melhora da firmeza e rejuvenescimento da pele facial e corporal. Sua tecnologia de encapsulação potencializa a ação dos ativos, proporcionando efeito lifting.",
+                        desc: "O Sérum DMAE promove contração celular imediata, melhora da firmeza e rejuvenescimento da pele facial e corporal. Sua tecnologia de encapsulação potencializa a ação dos ativos, proporcionando efeito lifting, melhora da textura e redução da flacidez.",
                         ativos: "Nanovetor DMAE 25 mg/g • Nano Elastyl 20 mg/g • Raffermine 10 mg/g.", 
                         dica: "Aplicar manualmente ou associar à iontoforese, eletroporação, radiofrequência, LED, jato de plasma e microagulhamento.", 
                         rendimento: "60 aplicações"
@@ -362,7 +388,7 @@
                     {
                         name: "Sérum Nano Factor 50ml", vol: "50ml", de: "R$ 261,80", cartao: "R$ 157,00", pix: "R$ 149,15", promo2: "R$ 136,00",
                         protocolo: ["Loção Tônica", "Sérum Nano Factor", "Segunda Pele"],
-                        desc: "O Sérum Nano Factor foi desenvolvido para acelerar os processos naturais de regeneração da pele. Com fatores de crescimento em nanotecnologia, estimula a produção de colágeno e elastina, auxiliando no tratamento de cicatrizes.",
+                        desc: "O Sérum Nano Factor foi desenvolvido para acelerar os processos naturais de regeneração da pele. Com fatores de crescimento em nanotecnologia, estimula a produção de colágeno e elastina, auxiliando no tratamento de cicatrizes, estrias, alopecia e procedimentos de rejuvenescimento.",
                         ativos: "Nanofactor CG-EGF 20 mg/g • Nanofactor CG-IGF 20 mg/g • Hydroxyprolisilane 30 mg/g • Fucogel 10 mg/g • Physiogenyl 10 mg/g.", 
                         dica: "Aplicar manualmente ou associar à iontoforese, eletroporação, radiofrequência, microagulhamento e jato de plasma.", 
                         rendimento: "50 aplicações"
@@ -370,7 +396,7 @@
                     {
                         name: "Sérum Hialuron 8D 20g", vol: "20g", de: "R$ 126,90", cartao: "R$ 66,30", pix: "R$ 62,99",
                         protocolo: ["Stone Gold", "Sérum Hialuron 8D", "Solar Hidra Active FPS 30"],
-                        desc: "O Sérum Hialuron 8D reúne oito tipos de ácido hialurônico que atuam em diferentes camadas da pele para proporcionar hidratação intensa, preenchimento gradual e redução das linhas de expressão.",
+                        desc: "O Sérum Hialuron 8D reúne oito tipos de ácido hialurônico que atuam em diferentes camadas da pele para proporcionar hidratação intensa, preenchimento gradual e redução das linhas de expressão. Ideal para rosto, olhos, lábios e estrias, devolvendo volume, maciez e elasticidade.",
                         ativos: "Extrato de Aloe Vera 820 mg/g • Ácidos Hialurônicos (Moistshield) 20 mg/g • Zemea 2 mg/g.", 
                         dica: "Aplicar diariamente nas áreas desejadas ou associar aos protocolos estéticos.", 
                         rendimento: "45 aplicações"
@@ -378,7 +404,7 @@
                     {
                         name: "Sérum C+D 20% 50ml", vol: "50ml", de: "R$ 355,40", cartao: "R$ 213,00", pix: "R$ 202,35", promo2: "R$ 185,00",
                         protocolo: ["Vita C+A", "Sérum C+D", "Solar Hidra Active FPS 30"],
-                        desc: "O Sérum C+D 20% combina Vitamina C estabilizada e Vitamina D Like para uniformizar o tom da pele, estimular a produção de colágeno e combater os sinais do envelhecimento.",
+                        desc: "O Sérum C+D 20% combina Vitamina C estabilizada e Vitamina D Like para uniformizar o tom da pele, estimular a produção de colágeno e combater os sinais do envelhecimento. Sua fórmula antioxidante revitaliza a pele, melhora a luminosidade e fortalece a matriz dérmica para um aspecto mais jovem e saudável.",
                         ativos: "Vitamina C 200 mg/g • Zemea 30 mg/g • Clareoff 20 mg/g • Vederine 20 mg/g • Hydroxyprolisilane 5 mg/g.", 
                         dica: "Aplicar diariamente sobre a pele limpa ou associar aos protocolos estéticos. Finalizar com protetor solar.", 
                         rendimento: "50 aplicações"
@@ -386,7 +412,7 @@
                     {
                         name: "Monoi Face 200g", vol: "200g", de: "R$ 167,70", cartao: "R$ 69,50", pix: "R$ 66,03",
                         protocolo: ["Emulsão de Limpeza", "Monoi Face", "Solar Hidra Active"],
-                        desc: "Creme de massagem facial vegano desenvolvido com Óleo de Monoï do Tahiti e ativos vegetais para promover hidratação profunda, nutrição e regeneração da pele. Possui excelente deslizamento para massagens faciais.",
+                        desc: "Creme de massagem facial vegano desenvolvido com Óleo de Monoï do Tahiti e ativos vegetais para promover hidratação profunda, nutrição e regeneração da pele. Possui excelente deslizamento para massagens faciais, deixando a pele macia, luminosa e com toque aveludado. Indicado para todos os tipos de pele, inclusive peles sensíveis e gestantes.",
                         ativos: "Monoï de Tahiti 30 mg/g • Extrato de Algas Marinhas 20 mg/g • Lipex Bassol 20 mg/g • Óleo Vegetal 30 mg/g • Manteiga de Cupuaçu 5 mg/g • Manteiga de Karité 5 mg/g • Óleo Vegetal Dermocompatível 5 mg/g.", 
                         dica: "Aplicar sobre a pele limpa e seca, realizando massagens faciais em rosto, pescoço e colo até completa absorção. No home care, utilizar diariamente como hidratante.", 
                         rendimento: "42 aplicações",
@@ -395,14 +421,14 @@
                     {
                         name: "Stone Gold 120g", vol: "120g", de: "R$ 160,40", cartao: "R$ 69,90", pix: "R$ 66,41",
                         protocolo: ["Sérum DMAE", "Stone Gold", "Solar Hidra Active FPS 30"],
-                        desc: "A Stone Gold combina ativos de alta performance para hidratar, nutrir e revitalizar a pele. Sua fórmula promove preenchimento das linhas de expressão, melhora da elasticidade e fortalecimento da barreira cutânea.",
+                        desc: "A Stone Gold combina ativos de alta performance para hidratar, nutrir e revitalizar a pele. Sua fórmula promove preenchimento das linhas de expressão, melhora da elasticidade e fortalecimento da barreira cutânea, deixando a pele mais luminosa, firme e com aspecto rejuvenescido.",
                         ativos: "Ácido Hialurônico 20 mg/g • Quiditat 30 mg/g • Vederine 10 mg/g • Alantoína 1 mg/g.", 
                         dica: "Aplicar uma camada uniforme sobre rosto e pescoço, deixar agir por 10 minutos e remover. Finalizar com protetor solar.", 
                         rendimento: "35 aplicações"
                     },
                     {
                         name: "Bio Lift 200g", vol: "200g", de: "R$ 214,90", cartao: "R$ 99,90", pix: "R$ 94,91", promo2: "R$ 89,90",
-                        desc: "Creme corporal de alta performance desenvolvido para melhorar a firmeza, elasticidade e tonicidade da pele. Combina nanotecnologia e ativos de última geração que auxiliam na prevenção da flacidez.",
+                        desc: "Creme corporal de alta performance desenvolvido para melhorar a firmeza, elasticidade e tonicidade da pele. Combina nanotecnologia e ativos de última geração que auxiliam na prevenção da flacidez, reduzem o aspecto das estrias e restauram a barreira cutânea. Seguro para uso durante a gestação.",
                         ativos: "Nano DMAE 50 mg/g • Raffermine • Nutripeptídeos • Antioxidantes.", 
                         dica: "Aplicar sobre a pele limpa nas regiões com flacidez ou propensas ao aparecimento de estrias, realizando massagens até completa absorção.", 
                         rendimento: "60 aplicações",
@@ -411,7 +437,7 @@
                     {
                         name: "Ametist Mask 250g", vol: "250g", de: "N/A", cartao: "R$ 197,90", pix: "R$ 188,01", promo2: "R$ 29,90",
                         protocolo: ["Sérum DMAE", "Ametist Mask", "Sérum Hialuron 8D"],
-                        desc: "Máscara facial peel off vegana enriquecida com pó de ametista e ácido hialurônico, desenvolvida para promover hidratação intensa, firmeza e revitalização da pele. Forma uma película que potencializa a ação dos ativos.",
+                        desc: "Máscara facial peel off vegana enriquecida com pó de ametista e ácido hialurônico, desenvolvida para promover hidratação intensa, firmeza e revitalização da pele. Forma uma película que potencializa a ação dos ativos, proporcionando efeito tensor imediato, melhora da elasticidade e uma aparência mais jovem e luminosa.",
                         ativos: "Ametista PW 2 mg/g • Ácido Hialurônico 10 mg/g • Extrato de Aloe Vera 10 mg/g • Alantoína 1 mg/g.", 
                         dica: "Após a aplicação dos séruns de tratamento, espalhe uma camada uniforme sobre a pele limpa. Deixe secar por aproximadamente 20 minutos e retire delicadamente iniciando pelas bordas. Finalize com os produtos do protocolo.", 
                         rendimento: "40 aplicações"
@@ -443,7 +469,7 @@
                     {
                         name: "Fluido Térmico 1L", vol: "1 Litro", de: "R$ 197,90", cartao: "R$ 89,90", pix: "R$ 85,41", promo2: "3 por R$79,90 CADA",
                         protocolo: ["Nano Lipo", "Fluido Térmico", "Creme Lipoex"],
-                        desc: "Fluido termogênico desenvolvido para potencializar tratamentos de gordura localizada, celulite e flacidez. Promove aquecimento da região, melhora a circulação sanguínea, aumenta a permeação dos ativos.",
+                        desc: "Fluido termogênico desenvolvido para potencializar tratamentos de gordura localizada, celulite e flacidez. Promove aquecimento da região, melhora a circulação sanguínea, aumenta a permeação dos ativos e potencializa massagens modeladoras e protocolos detox corporais.",
                         ativos: "Nicotinato de Metila • Cafeína • Centella Asiática • Castanha-da-Índia.", 
                         dica: "Aplicar sobre a região desejada antes da massagem modeladora ou conforme o protocolo estético.", 
                         rendimento: "192 aplicações"
@@ -467,7 +493,7 @@
                     {
                         name: "Lipoflex 200g", vol: "200g", de: "N/A", cartao: "R$ 186,30", pix: "R$ 176,99", promo2: "R$ 10,00",
                         protocolo: ["Fluido Térmico", "Lipoflex", "Manutenção diária com Fluido Térmico"],
-                        desc: "Gel de uso diário desenvolvido para auxiliar na redução da gordura localizada, combater a celulite e melhorar a firmeza da pele. Sua fórmula reúne uma sinergia de ativos lipolíticos e firmadores.",
+                        desc: "Gel de uso diário desenvolvido para auxiliar na redução da gordura localizada, combater a celulite e melhorar a firmeza da pele. Sua fórmula reúne uma sinergia de ativos lipolíticos e firmadores, potencializando os resultados dos tratamentos corporais.",
                         ativos: "Cafeína • Laranja Amarga • Chá Verde • L-Carnitina • Gengibre • DMAE • Raffermine.", 
                         dica: "Após o banho, aplicar o Fluido Térmico e, em seguida, o Lipoflex sobre a região desejada, massageando até completa absorção. Utilizar duas vezes ao dia.", 
                         rendimento: "40 aplicações"
@@ -475,7 +501,7 @@
                     {
                         name: "Creme de Algas 1kg", vol: "1kg", de: "R$ 243,70", cartao: "R$ 89,90", pix: "R$ 85,41", promo2: "R$ 78,20",
                         protocolo: ["Fluido Térmico", "Creme de Algas", "Stone Gold"],
-                        desc: "Creme corporal enriquecido com algas marinhas, desenvolvido para hidratar profundamente, remineralizar e revitalizar a pele. Auxilia na melhora da elasticidade, favorece a nutrição dos tecidos.",
+                        desc: "Creme corporal enriquecido com algas marinhas, desenvolvido para hidratar profundamente, remineralizar e revitalizar a pele. Auxilia na melhora da elasticidade, favorece a nutrição dos tecidos e potencializa protocolos corporais de hidratação e bem-estar.",
                         ativos: "Extrato de Algas Marinhas • Oligoelementos • Minerais.", 
                         dica: "Aplicar sobre a pele limpa realizando massagens até completa absorção ou conforme o protocolo estético.", 
                         rendimento: "42 aplicações"
@@ -483,7 +509,7 @@
                     {
                         name: "Balm Corporal 1kg", vol: "1kg", de: "R$ 248,40", cartao: "R$ 99,90", pix: "R$ 94,91", promo2: "R$ 86,90",
                         protocolo: ["Peeling Buona Vita", "Balm Corporal", "Solar Hidra Active nas áreas expostas"],
-                        desc: "Dermocosmético ortomolecular desenvolvido para combater a flacidez corporal, promovendo hidratação profunda, firmeza e elasticidade. Sua combinação exclusiva de 8 tipos de Ácido Hialurônico e Colágeno Vegetal.",
+                        desc: "Dermocosmético ortomolecular desenvolvido para combater a flacidez corporal, promovendo hidratação profunda, firmeza e elasticidade. Sua combinação exclusiva de 8 tipos de Ácido Hialurônico e Colágeno Vegetal Hidrolisado proporciona efeito preenchedor, melhora o tônus da pele e auxilia na prevenção do envelhecimento precoce. Indicado especialmente para peles maduras e 50+.",
                         ativos: "8 Ácidos Hialurônicos • Colágeno Vegetal Hidrolisado 10 mg/g.", 
                         dica: "Aplicar a quantidade necessária sobre a pele e realizar massagens modeladoras ou relaxantes até completa absorção.", 
                         rendimento: "72 aplicações"
@@ -491,7 +517,7 @@
                     {
                         name: "Creme Lipotérmico 1kg", vol: "1kg", de: "R$ 232,50", cartao: "R$ 79,90", pix: "R$ 75,91",
                         protocolo: ["Fluido Térmico", "Creme Lipotérmico", "Argila Verde"],
-                        desc: "Creme de massagem com efeito termogênico que promove aquecimento local, auxiliando nos tratamentos de gordura localizada, celulite e remodelação corporal. Favorece a microcirculação.",
+                        desc: "Creme de massagem com efeito termogênico que promove aquecimento local, auxiliando nos tratamentos de gordura localizada, celulite e remodelação corporal. Favorece a microcirculação e potencializa os resultados das massagens modeladoras.",
                         ativos: "Nicotinato de Metila • Cafeína • Centella Asiática • Castanha-da-Índia.", 
                         dica: "Aplicar sobre a região desejada e realizar massagens modeladoras. Uso profissional.", 
                         rendimento: "52 aplicações"
@@ -507,7 +533,7 @@
                     {
                         name: "Argila Verde 1kg", vol: "1kg", de: "R$ 142,00", cartao: "R$ 85,20", pix: "R$ 80,94", promo2: "R$ 74,00",
                         protocolo: ["Fluido Térmico", "Argila Verde", "Nano Lipo"],
-                        desc: "Argila 100% natural e vegana, rica em oligoelementos e minerais que promovem uma profunda desintoxicação da pele. Auxilia na redução de edemas, controla a oleosidade, revitaliza os tecidos.",
+                        desc: "Argila 100% natural e vegana, rica em oligoelementos e minerais que promovem uma profunda desintoxicação da pele. Auxilia na redução de edemas, controla a oleosidade, revitaliza os tecidos e favorece a renovação celular. Ideal para protocolos faciais, corporais e capilares, especialmente em tratamentos de celulite e gordura localizada.",
                         ativos: "Argila Verde 100% Natural (Kaolin), rica em Silício, Magnésio, Cálcio, Potássio, Ferro, Zinco, Cobre e outros oligoelementos essenciais.", 
                         dica: "Dilua a quantidade necessária com Loção Termal, Tônica ou água até formar pasta homogênea. Aplique camada generosa, deixe agir por 20 minutos e remova. Pode ser associada aos Sais Térmicos.", 
                         rendimento: "60 aplicações"
@@ -515,7 +541,7 @@
                     {
                         name: "Argila Branca 1kg", vol: "1kg", de: "R$ 142,00", cartao: "R$ 59,80", pix: "R$ 56,81", promo2: "R$ 49,70",
                         protocolo: ["Peeling Buona Vita", "Argila Branca associada ao Óleo Flan", "Bio Lift"],
-                        desc: "Máscara 100% natural e vegana, rica em silício e oligoelementos que promovem hidratação, nutrição e regeneração da pele. Estimula a produção de colágeno, melhora a elasticidade, auxilia na prevenção da flacidez.",
+                        desc: "Máscara 100% natural e vegana, rica em silício e oligoelementos que promovem hidratação, nutrição e regeneração da pele. Estimula a produção de colágeno, melhora a elasticidade, auxilia na prevenção da flacidez e estrias, além de possuir ação suavizante e clareadora. Indicada para todos os tipos de pele, sensíveis, desidratadas e para protocolos na gestação.",
                         ativos: "Argila Branca (Caulim) 100% Natural, rica em Silício e oligoelementos essenciais.", 
                         dica: "Dilua a quantidade necessária com Loção Termal, Tônica ou Água Mineral até obter pasta homogênea. Aplique camada generosa sobre a área desejada, deixe agir por 20 minutos e remova com água.", 
                         rendimento: "86 aplicações",
@@ -531,7 +557,7 @@
                     },
                     {
                         name: "Balsamo 150g", vol: "150g", de: "R$ 130,70", cartao: "R$ 78,40", pix: "R$ 74,48", promo2: "R$ 68,20",
-                        desc: "Dermocosmético desenvolvido para hidratar intensamente, restaurar a barreira cutânea e acelerar a regeneração da pele. Promove ação calmante, nutritiva e emoliente, sendo ideal para áreas ressecadas.",
+                        desc: "Dermocosmético desenvolvido para hidratar intensamente, restaurar a barreira cutânea e acelerar a regeneração da pele. Promove ação calmante, nutritiva e emoliente, sendo ideal para áreas ressecadas, sensibilizadas e que necessitam de reparação.",
                         ativos: "D-Pantenol • Manteiga de Karité • Extrato de Própolis.", 
                         dica: "Aplicar uma fina camada sobre a pele limpa, massageando suavemente até completa absorção.", 
                         rendimento: "80 aplicações"
@@ -556,9 +582,9 @@
                     {
                         name: "Hidra Sun Progress FPS 35 50g", vol: "50g", de: "R$ 148,30", cartao: "R$ 88,90", pix: "R$ 84,46", promo2: "R$ 77,40",
                         protocolo: ["Emulsão de Limpeza", "Hidra Sun Progress FPS 35", "Reaplicação do próprio Hidra Sun Progress"],
-                        desc: "BB Cream multifuncional com FPS 35 e tecnologia Adapt Color, que se adapta a todos os fototipos de pele. Uniformiza o tom, disfarça imperfeições, hidrata e protege.",
-                        ativos: "Carnosine 1 mg/g • Dry-Flo Pure 30 mg/g • FloraGlo Lutein 0,5 mg/g • Glycofilm 5 mg/g • Lexfeel 20 mg/g • Lexfilm Sun 20 mg/g • Trehalose 5 mg/g.",
-                        dica: "Aplicar uniformemente sobre a pele limpa e seca antes da exposição solar. Reaplicar sempre que necessário.",
+                        desc: "BB Cream multifuncional com FPS 35 e tecnologia Adapt Color, que se adapta a todos os fototipos de pele. Uniformiza o tom, disfarça imperfeições, hidrata e protege contra os raios UVA, UVB, luz azul e poluição.",
+                        ativos: "Carnosine 1 mg/g • Dry-Flo Pure 30 mg/g • FloraGlo Lutein 0,5 mg/g • Glycofilm 5 mg/g • Lexfeel 20 mg/g • Lexfilm Sun 20 mg/g • Trehalose 5 mg/g.", 
+                        dica: "Aplicar uniformemente sobre a pele limpa e seca antes da exposição solar. Reaplicar sempre que necessário.", 
                         rendimento: "170 aplicações",
                         isGestante: true
                     }
@@ -572,75 +598,75 @@
                 products: [
                     { 
                         name: "Kit Acne Skin Care", vol: "2 Itens", de: "R$ 256,70", cartao: "R$ 134,00", pix: "R$ 127,30", 
-                        desc: "O Kit Acne Skin Care Buona Vita reúne dois grandes aliados no combate à acne: o Normaclean e o ProSec. Juntos, proporcionam uma pele mais limpa, equilibrada e saudável.<br><br><b>Contém:</b> Normaclean, ProSec.", 
+                        desc: "O Kit Acne Skin Care Buona Vita reúne dois grandes aliados no combate à acne: o Normaclean, que promove uma limpeza profunda e controla a oleosidade, e o ProSec, que auxilia na redução de cravos, espinhas e vermelhidão. Juntos, proporcionam uma pele mais limpa, equilibrada e saudável.<br><br><b>Contém:</b> Normaclean, ProSec.", 
                         ativos: "Ácido Salicílico, Niacinamida.", 
-                        dica: "Higienize a pele com o Normaclean e, em seguida, aplique o ProSec sobre as áreas acneicas ou com maior oleosidade."
+                        dica: "Higienize a pele com o Normaclean e, em seguida, aplique o ProSec sobre as áreas acneicas ou com maior oleosidade. Utilize diariamente, pela manhã e à noite. Durante o dia, recomenda-se o uso de protetor solar."
                     },
                     { 
                         name: "Kit Clareamento Skin Care", vol: "2 Itens", de: "R$ 264,50", cartao: "R$ 138,00", pix: "R$ 131,10", 
-                        desc: "O Kit Clareamento Skin Care Buona Vita combina o poder clareador do Luminance 5X com a alta proteção do Solar Hidra Active, auxiliando no tratamento de melasma, manchas solares, hormonais e pós-inflamatórias.<br><br><b>Contém:</b> Luminance 5X, Solar Hidra Active.", 
+                        desc: "O Kit Clareamento Skin Care Buona Vita combina o poder clareador do Luminance 5X com a alta proteção do Solar Hidra Active, auxiliando no tratamento de melasma, manchas solares, hormonais e pós-inflamatórias, enquanto previne o surgimento de novas hipercromias.<br><br><b>Contém:</b> Luminance 5X, Solar Hidra Active.", 
                         ativos: "Ácido Tranexâmico, Filtros UV.", 
-                        dica: "Aplique o Luminance 5X sobre a pele limpa, pela manhã e à noite. Durante o dia, finalize com o Solar Hidra Active."
+                        dica: "Aplique o Luminance 5X sobre a pele limpa, pela manhã e à noite. Durante o dia, finalize com o Solar Hidra Active e reaplique sempre que necessário."
                     },
                     { 
                         name: "Kit Estética Íntima Care", vol: "3 Itens", de: "R$ 511,50", cartao: "R$ 249,90", pix: "R$ 237,41", 
-                        desc: "O Kit Estética Íntima Care Buona Vita reúne três dermocosméticos que atuam em perfeita sinergia para devolver confiança e autoestima.<br><br><b>Contém:</b> Luminance 5X, Vita C+A, Bio Lift.", 
+                        desc: "O Kit Estética Íntima Care Buona Vita reúne três dermocosméticos que atuam em perfeita sinergia para devolver confiança e autoestima. O Luminance 5X uniformiza o tom da pele, o Vita C+A promove renovação celular, enquanto o Bio Lift melhora a firmeza e a hidratação da pele.<br><br><b>Contém:</b> Luminance 5X, Vita C+A, Bio Lift.", 
                         ativos: "Alfa-Arbutin, Vitamina C.", 
-                        dica: "Aplique o Luminance 5X sobre a pele limpa, em seguida o Vita C+A e finalize com o Bio Lift, massageando até completa absorção."
+                        dica: "Aplique o Luminance 5X sobre a pele limpa, em seguida o Vita C+A e finalize com o Bio Lift, massageando até completa absorção. Utilize conforme orientação profissional."
                     },
                     { 
                         name: "Kit Estudante Facial", vol: "6 Itens", de: "R$ 782,90", cartao: "R$ 244,40", pix: "R$ 232,18", 
-                        desc: "O Kit Estudante Facial Buona Vita reúne os principais dermocosméticos utilizados em um protocolo completo de limpeza de pele. Da higienização à proteção final.<br><br><b>Contém:</b> Emulsão de Limpeza 140 ml, Amolecedor de Comedões 500 ml, Loção Termal 120 ml, Peeling 250 g, Máscara Descongestionante, Solar Hidra Active.", 
+                        desc: "O Kit Estudante Facial Buona Vita reúne os principais dermocosméticos utilizados em um protocolo completo de limpeza de pele. Da higienização à proteção final, oferece tudo o que o estudante precisa para desenvolver técnicas com segurança, qualidade e resultados profissionais.<br><br><b>Contém:</b> Emulsão de Limpeza 140 ml, Amolecedor de Comedões 500 ml, Loção Termal 120 ml, Peeling 250 g, Máscara Descongestionante, Solar Hidra Active.", 
                         ativos: "Sinergia de dermocosméticos faciais Buona Vita.", 
-                        dica: "Inicie com a Emulsão, aplique o Amolecedor, realize a renovação com o Peeling, acalme com a Máscara, finalize com a Loção Termal e Solar Hidra Active."
+                        dica: "Inicie com a Emulsão de Limpeza, aplique o Amolecedor de Comedões para facilitar a extração, realize a renovação da pele com o Peeling, acalme a pele com a Máscara Descongestionante, finalize com a Loção Termal e proteja a pele com o Solar Hidra Active."
                     },
                     { 
                         name: "Kit Estudante Corporal", vol: "5 Itens", de: "R$ 891,00", cartao: "R$ 299,90", pix: "R$ 284,91", 
-                        desc: "O Kit Estudante Corporal Buona Vita reúne os dermocosméticos essenciais para a formação em estética corporal, permitindo a realização de protocolos de massagem modeladora, termoterapia, detox.<br><br><b>Contém:</b> Creme Lipoex 1 kg, Fluido Térmico 1 L, Argila Verde 1 kg, Sais Térmicos, Óleo Flan.", 
+                        desc: "O Kit Estudante Corporal Buona Vita reúne os dermocosméticos essenciais para a formação em estética corporal, permitindo a realização de protocolos de massagem modeladora, termoterapia, detox e redução da aparência da celulite e gordura localizada.<br><br><b>Contém:</b> Creme Lipoex 1 kg, Fluido Térmico 1 L, Argila Verde 1 kg, Sais Térmicos, Óleo Flan.", 
                         ativos: "Sinergia de dermocosméticos corporais Buona Vita.", 
-                        dica: "Prepare a pele com os Sais Térmicos e o Fluido Térmico, realize a massagem modeladora com o Creme Lipoex e associe a Argila Verde."
+                        dica: "Prepare a pele com os Sais Térmicos e o Fluido Térmico, realize a massagem modeladora com o Creme Lipoex, associe a Argila Verde nos protocolos detox e finalize com o Óleo Flan conforme a técnica escolhida."
                     },
                     { 
                         name: "Kit Gestar Care", vol: "3 Itens", de: "R$ 401,10", cartao: "R$ 216,00", pix: "R$ 205,20", 
-                        desc: "O Kit Gestar Care Buona Vita foi especialmente desenvolvido para acompanhar as transformações da gravidez, proporcionando mais conforto, hidratação e cuidado diário.<br><br><b>Contém:</b> Alívio P&P 150 ml, Bio Lift 200 g, Óleo Potencializador 20 ml.", 
+                        desc: "O Kit Gestar Care Buona Vita foi especialmente desenvolvido para acompanhar as transformações da gravidez, proporcionando mais conforto, hidratação e cuidado diário. Auxilia na prevenção de estrias, melhora a elasticidade e a firmeza da pele, além de aliviar o inchaço.<br><br><b>Contém:</b> Alívio P&P 150 ml, Bio Lift 200 g, Óleo Potencializador 20 ml.", 
                         ativos: "Rosa Mosqueta, DMAE.", 
-                        dica: "Aplique o Bio Lift nas regiões mais suscetíveis às estrias, potencializando com gotas do Óleo. Nas pernas, utilize o Alívio P&P."
+                        dica: "Aplique o Bio Lift nas regiões mais suscetíveis às estrias, potencializando com gotas do Óleo. Nas pernas e pés, utilize o Alívio P&P com massagens suaves para aliviar o cansaço e o inchaço."
                     },
                     { 
                         name: "Kit Limpeza de Pele e Hidratação", vol: "7 Itens", de: "R$ 929,80", cartao: "R$ 399,90", pix: "R$ 379,91", 
-                        desc: "O Kit Limpeza de Pele e Hidratação Buona Vita reúne os dermocosméticos essenciais para realizar um protocolo facial completo.<br><br><b>Contém:</b> Emulsão de Limpeza 500 ml, Amolecedor 1 L, Ionto Vita Tônus 120 ml, Loção Tônica 500 ml, Máscara Descongestionante 500 g, Peeling 250 g, Solar Hidra Active FPS 30 – 60 g.", 
+                        desc: "O Kit Limpeza de Pele e Hidratação Buona Vita reúne os dermocosméticos essenciais para realizar um protocolo facial completo. Sua combinação promove limpeza profunda, facilita a extração de comedões, auxilia na renovação celular, acalma e hidrata a pele.<br><br><b>Contém:</b> Emulsão de Limpeza 500 ml, Amolecedor de Comedões 1 L, Ionto Vita Tônus 120 ml, Loção Tônica 500 ml, Máscara Descongestionante 500 g, Peeling 250 g, Solar Hidra Active FPS 30 – 60 g.", 
                         ativos: "Emolientes profundos.", 
-                        dica: "Higienize com a Emulsão, aplique o Amolecedor, realize a esfoliação com o Peeling, equilibre com a Loção Tônica, aplique a Máscara."
+                        dica: "Higienize a pele com a Emulsão, aplique o Amolecedor, realize a esfoliação com o Peeling, equilibre com a Loção Tônica, aplique a Máscara Descongestionante, finalize a hidratação com o Ionto Vita Tônus e proteja a pele com o Solar Hidra Active FPS 30."
                     },
                     { 
                         name: "Kit Limpeza Premium", vol: "5 Itens", de: "R$ 667,30", cartao: "R$ 299,90", pix: "R$ 284,91", 
-                        desc: "O Kit Limpeza Premium Buona Vita reúne os produtos indispensáveis para realizar uma limpeza de pele de alta performance.<br><br><b>Contém:</b> Sabonete 480 ml, Creme Emoliente 500 g, Loção Tônica 500 ml, Máscara Descongestionante 500 g, Peeling 250 g.", 
+                        desc: "O Kit Limpeza Premium Buona Vita reúne os produtos indispensáveis para realizar uma limpeza de pele de alta performance. Sua combination promove higienização profunda, facilita a extração dos comedões, remove as células mortas e acalma a pele após o procedimento.<br><br><b>Contém:</b> Sabonete 480 ml, Creme Emoliente 500 g, Loção Tônica 500 ml, Máscara Descongestionante 500 g, Peeling 250 g.", 
                         ativos: "Emoliência Extra.", 
-                        dica: "Higienize com o Sabonete, aplique o Creme Emoliente, realize a esfoliação com o Peeling, equilibre com a Loção Tônica e finalize com a Máscara."
+                        dica: "Higienize a pele com o Sabonete, aplique o Creme Emoliente para extração, realize a esfoliação com o Peeling, equilibre a pele com a Loção Tônica e finalize com a Máscara Descongestionante para acalmar e hidratar a pele."
                     },
                     { 
                         name: "Kit OrtoDetox", vol: "4 Itens", de: "R$ 605,40", cartao: "R$ 299,90", pix: "R$ 284,91", 
-                        desc: "O Kit OrtoDetox Buona Vita combina ativos que atuam em sinergia para promover uma verdadeira desintoxicação da pele, estimular a microcirculação e potencializar a redução da gordura.<br><br><b>Contém:</b> Sais Térmicos, Argila Verde, Nano Lipo, Fluido Térmico 1 L.", 
+                        desc: "O Kit OrtoDetox Buona Vita combina ativos que atuam em sinergia para promover uma verdadeira desintoxicação da pele, estimular a microcirculação e potencializar a redução da gordura localizada, da celulite e dos edemas.<br><br><b>Contém:</b> Sais Térmicos, Argila Verde, Nano Lipo, Fluido Térmico 1 L.", 
                         ativos: "Sais Minerais e Nicotinato.", 
-                        dica: "Prepare a pele com o Fluido Térmico, aplique o Nano Lipo massageando até completa absorção e utilize a Argila Verde associada aos Sais Térmicos."
+                        dica: "Prepare a pele com o Fluido Térmico, aplique o Nano Lipo massageando até completa absorção e, em seguida, utilize a Argila Verde associada aos Sais Térmicos conforme o protocolo detox corporal."
                     },
                     { 
                         name: "Kit Rejuvenescimento", vol: "3 Itens", de: "R$ 514,20", cartao: "R$ 238,00", pix: "R$ 226,10", 
-                        desc: "O Kit Rejuvenescimento Buona Vita reúne três poderosos dermocosméticos que atuam em sinergia para devolver à pele firmeza, vitalidade e luminosidade.<br><br><b>Contém:</b> Ionto Vita Tônus 120 ml, Sérum DMAE, Sérum Nano Factor.", 
+                        desc: "O Kit Rejuvenescimento Buona Vita reúne três poderosos dermocosméticos que atuam em sinergia para devolver à pele firmeza, vitalidade e luminosidade. Uma rotina completa para conquistar uma pele mais firme, uniforme e visivelmente rejuvenescida.<br><br><b>Contém:</b> Ionto Vita Tônus 120 ml, Sérum DMAE, Sérum Nano Factor.", 
                         ativos: "Fatores de Crescimento e Nano DMAE.", 
-                        dica: "Aplique o Ionto Vita Tônus sobre a pele limpa, seguido do Sérum Nano Factor e finalize com o Sérum DMAE."
+                        dica: "Aplique o Ionto Vita Tônus sobre a pele limpa, seguido do Sérum Nano Factor e finalize com o Sérum DMAE, massageando suavemente até completa absorção. Utilize conforme orientação profissional."
                     },
                     { 
                         name: "Kit Tratamento SELF", vol: "3 Itens", de: "R$ 577,30", cartao: "R$ 259,90", pix: "R$ 246,91", 
-                        desc: "O Kit Tratamento SELF Buona Vita reúne três dermocosméticos de alta performance que atuam em sinergia para tratar as principais alterações da estética corporal em um único protocolo.<br><br><b>Contém:</b> Nano Lipo, Fluido Térmico 1 L, Creme Lipoex 1 kg.", 
+                        desc: "O Kit Tratamento SELF Buona Vita reúne três dermocosméticos de alta performance que atuam em sinergia para tratar as principais alterações da estética corporal em um único protocolo. A combinação estimula a microcirculação e potencializa a lipólise.<br><br><b>Contém:</b> Nano Lipo, Fluido Térmico 1 L, Creme Lipoex 1 kg.", 
                         ativos: "Lipolíticos concentrados.", 
-                        dica: "Aplique o Fluido Térmico sobre a região a ser tratada, em seguida o Nano Lipo e finalize realizando a massagem modeladora com o Creme Lipoex."
+                        dica: "Aplique o Fluido Térmico sobre a região a ser tratada, em seguida o Nano Lipo, massageando até completa absorção, e finalize realizando a massagem modeladora com o Creme Lipoex, conforme o protocolo profissional."
                     },
                     { 
                         name: "Kit Tratamento SELF Manutenção", vol: "2 Itens", de: "R$ 274,20", cartao: "R$ 143,00", pix: "R$ 135,85", 
-                        desc: "O Kit Tratamento SELF Manutenção Buona Vita foi desenvolvido para prolongar os resultados conquistados nos protocolos estéticos corporais.<br><br><b>Contém:</b> Fluido Térmico 140 ml, Lipoflex 200 g.", 
+                        desc: "O Kit Tratamento SELF Manutenção Buona Vita foi desenvolvido para prolongar os resultados conquistados nos protocolos estéticos corporais. O cuidado ideal para manter os resultados do tratamento entre as sessões.<br><br><b>Contém:</b> Fluido Térmico 140 ml, Lipoflex 200 g.", 
                         ativos: "Nicotinato Home.", 
-                        dica: "Aplique o Fluido Térmico sobre a região desejada e, em seguida, massageie com o Lipoflex até completa absorção."
+                        dica: "Aplique o Fluido Térmico sobre a região desejada e, em seguida, massageie com o Lipoflex até completa absorção. Utilize diariamente ou conforme orientação profissional."
                     }
                 ]
             },
@@ -652,7 +678,7 @@
                 products: [
                     {
                         name: "Livro Gestante – 2ª Edição", vol: "Unidade", de: "R$ 119,90", cartao: "R$ 66,55", pix: "R$ 63,22",
-                        img: "livro_gestante.png",
+                        img: "Livro_Gestante 2°edição.png",
                         desc: "O Livro Gestante – 2ª Edição reúne a experiência da Buona Vita Dermocosméticos em um material exclusivo para profissionais que desejam oferecer um atendimento diferenciado às gestantes. Com conteúdo atualizado, protocolos completos, fundamentação científica e orientações práticas.<br><br><b>O livro aborda:</b><br>• Protocolos faciais e corporais para gestantes.<br>• Prevenção de estrias e flacidez.<br>• Drenagem linfática e redução de edemas.<br>• Cuidados com melasma gestacional.<br>• Indicações, contraindicações e segurança nos procedimentos.<br>• Associação de dermocosméticos Buona Vita.",
                         ativos: "Literatura Científica Especializada.", 
                         dica: "Uma referência indispensável para esteticistas e profissionais que desejam atuar com excelência na estética materna, oferecendo tratamentos seguros, eficazes e baseados em ciência.", 
@@ -660,7 +686,7 @@
                     },
                     {
                         name: "Livro Estética Paliativa e Humanizada", vol: "Unidade", de: "R$ 166,40", cartao: "R$ 87,70", pix: "R$ 83,32",
-                        img: "livroesteticapaliativaeHumanizada.jpg",
+                        img: "LivroEstetica Paliativa e Humanizada.jpg",
                         desc: "O Livro Estética Paliativa e Humanizada foi desenvolvido para capacitar profissionais a oferecer um atendimento seguro, acolhedor e baseado em evidências para pacientes em cuidados paliativos e oncológicos. A obra reúne fundamentos científicos, protocolos e técnicas que priorizam o conforto físico e bem-estar.<br><br><b>O livro aborda:</b><br>• Fundamentos da Estética Paliativa e Humanizada.<br>• Cuidados com peles sensibilizadas e oncológicas.<br>• Protocolos faciais e corporais adaptados.<br>• Técnicas de acolhimento e atendimento humanizado.<br>• Segurança, indicações e contraindicações.",
                         ativos: "Literatura Científica Especializada.", 
                         dica: "Uma leitura indispensável para profissionais que desejam transformar o cuidado estético em uma experiência de acolhimento, respeito e bem-estar.", 
@@ -670,6 +696,10 @@
             }
         ];
 
+        // ==========================================
+        // MOTOR DE RENDERIZAÇÃO INTELIGENTE 
+        // (COMPATÍVEL COM GITHUB E PASTA PRODUTOS)
+        // ==========================================
         function renderCatalog() {
             const container = document.getElementById('volumes-container');
             let htmlContent = '';
@@ -701,8 +731,12 @@
                     const flexDir = isEven ? 'md:flex-row' : 'md:flex-row-reverse';
                     const blobClass = isEven ? 'blob-shape-1' : 'blob-shape-2';
 
-                    // Lógica para puxar a imagem real se existir. Se não, mantém o placeholder.
-                    const imagePath = prod.img ? prod.img : `https://placehold.co/200x300/ffffff/0caea4?text=${encodeURIComponent(prod.name.split(' ')[0])}`;
+                    // Lógica para puxar imagens da pasta "produtos" (COM TRATAMENTO DE ESPAÇOS)
+                    const fileName = prod.img ? prod.img : `${prod.name}.png`;
+                    const imagePath = `produtos/${encodeURIComponent(fileName)}`;
+                    
+                    // URL de Backup caso a imagem falhe
+                    const fallbackUrl = `https://placehold.co/200x300/ffffff/0caea4?text=${encodeURIComponent(prod.name.split(' ')[0])}`;
 
                     // Lógica para esconder o preço "De" se for N/A
                     const priceDeHtml = prod.de && prod.de !== "N/A" ? `
@@ -733,42 +767,35 @@
                         `;
                     }
 
+                    // TIMELINE COMPONENT (Antes, Durante e Depois em Roxo Minimalista)
                     let protocolHtml = '';
                     if (prod.protocolo && prod.protocolo.length === 3) {
                         protocolHtml = `
-                        <div class="mb-6 bg-purple-50 p-5 rounded-2xl border-l-4 border-purple-500 shadow-sm relative print:bg-purple-50/50 print:border-purple-300 mt-4">
-                            <h5 class="text-purple-900 font-bold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <div class="bg-purple-600 text-white p-1.5 rounded-full shadow-sm"><i data-lucide="layers" class="w-4 h-4"></i></div>
-                                Dica do Especialista: Protocolo
+                        <div class="mt-4 w-full bg-white rounded-2xl shadow-sm border border-gray-100 p-4 print:border-gray-300 relative z-20">
+                            <h5 class="text-[10px] uppercase tracking-[0.15em] text-purple-700 font-bold mb-3 flex items-center gap-1.5 border-b border-purple-50 pb-2">
+                                <i data-lucide="sparkles" class="w-3 h-3 text-purple-600"></i> Dica de Protocolo
                             </h5>
                             
-                            <div class="flex items-stretch justify-between gap-2">
-                                <!-- Passo 1: Antes -->
-                                <div class="flex flex-col flex-1 bg-white p-3 rounded-xl border border-purple-100 text-center shadow-sm justify-center">
-                                    <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider mb-1">Antes</span>
-                                    <span class="text-xs text-gray-700 font-medium leading-tight">${prod.protocolo[0]}</span>
+                            <div class="flex flex-col gap-2">
+                                <!-- Antes -->
+                                <div class="flex items-center gap-3 bg-white border border-gray-100 px-3 py-2 rounded-xl shadow-sm">
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 w-12">Antes</span>
+                                    <div class="w-1 h-4 bg-gray-200 rounded-full"></div>
+                                    <span class="text-[11px] font-semibold text-purple-700">${prod.protocolo[0]}</span>
                                 </div>
                                 
-                                <!-- Seta -->
-                                <div class="text-purple-300 flex flex-col justify-center">
-                                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                                <!-- Durante (DESTAQUE) -->
+                                <div class="flex items-center gap-3 bg-purple-700 px-3 py-2 rounded-xl shadow-md transform hover:scale-[1.02] transition-transform">
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-purple-200 w-12">Durante</span>
+                                    <div class="w-1 h-4 bg-purple-500 rounded-full"></div>
+                                    <span class="text-[11px] font-bold text-white">${prod.protocolo[1]}</span>
                                 </div>
                                 
-                                <!-- Passo 2: Durante (Highlight em Roxo Sólido) -->
-                                <div class="flex flex-col flex-1 bg-purple-600 p-3 rounded-xl border border-purple-600 text-center shadow-md transform scale-105 z-10 justify-center print:border-2 print:border-purple-800">
-                                    <span class="text-[10px] text-purple-200 font-bold uppercase tracking-wider mb-1">Durante</span>
-                                    <span class="text-sm text-white font-bold leading-tight print:text-purple-900">${prod.protocolo[1]}</span>
-                                </div>
-                                
-                                <!-- Seta -->
-                                <div class="text-purple-300 flex flex-col justify-center">
-                                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                                </div>
-                                
-                                <!-- Passo 3: Depois -->
-                                <div class="flex flex-col flex-1 bg-white p-3 rounded-xl border border-purple-100 text-center shadow-sm justify-center">
-                                    <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider mb-1">Depois</span>
-                                    <span class="text-xs text-gray-700 font-medium leading-tight">${prod.protocolo[2]}</span>
+                                <!-- Depois -->
+                                <div class="flex items-center gap-3 bg-white border border-gray-100 px-3 py-2 rounded-xl shadow-sm">
+                                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 w-12">Depois</span>
+                                    <div class="w-1 h-4 bg-gray-200 rounded-full"></div>
+                                    <span class="text-[11px] font-semibold text-purple-700">${prod.protocolo[2]}</span>
                                 </div>
                             </div>
                         </div>
@@ -780,17 +807,20 @@
                     const descClass = isKitVolume ? "text-sm text-gray-600" : "text-lg text-gray-500 italic";
 
                     htmlContent += `
-                            <div class="avoid-break flex flex-col ${flexDir} gap-10 md:gap-16 items-center px-4 md:px-10 group relative print:py-6 border-b border-gray-100 pb-16 last:border-0">
+                            <div class="avoid-break flex flex-col ${flexDir} gap-8 md:gap-16 items-center px-4 md:px-10 group relative print:py-6 border-b border-gray-100 pb-16 last:border-0">
                                 
-                                <div class="w-full md:w-5/12 relative flex justify-center items-center h-64 md:h-80">
-                                    <div class="absolute inset-0 bg-brand-light ${blobClass} opacity-80 print-bg-brand-light transition-all duration-700 group-hover:scale-105"></div>
-                                    <div class="absolute inset-4 bg-brand-teal opacity-10 ${blobClass} rotate-45 transition-all duration-700 group-hover:rotate-90"></div>
+                                <div class="w-full md:w-5/12 flex flex-col items-center relative">
                                     
-                                    <div class="relative z-10 bg-white p-6 rounded-2xl shadow-sm border border-gray-50 flex items-center justify-center w-48 h-64 print:shadow-none print:border-gray-300">
-                                        <img src="${imagePath}" class="max-h-full object-contain mix-blend-multiply drop-shadow-xl" alt="${prod.name}">
+                                    <div class="relative flex justify-center items-center w-full h-56 md:h-72">
+                                        <div class="absolute inset-0 bg-brand-light ${blobClass} opacity-80 print-bg-brand-light transition-all duration-700 group-hover:scale-105"></div>
+                                        <div class="absolute inset-4 bg-brand-teal opacity-10 ${blobClass} rotate-45 transition-all duration-700 group-hover:rotate-90"></div>
+                                        
+                                        <div class="relative z-10 bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-50 flex items-center justify-center w-40 md:w-48 h-56 md:h-64 print:shadow-none print:border-gray-300">
+                                            <img src="${imagePath}" onerror="this.onerror=null; this.src='${fallbackUrl}';" class="max-h-full object-contain mix-blend-multiply drop-shadow-xl transition-opacity duration-300" alt="${prod.name}">
+                                        </div>
+                                        
+                                        <span class="absolute top-0 ${isEven ? 'right-0' : 'left-0'} bg-brand-dark text-white text-[10px] font-bold px-4 py-2 rounded-full z-20 print-bg-brand-teal shadow-md">${prod.vol}</span>
                                     </div>
-                                    
-                                    <span class="absolute top-4 ${isEven ? 'right-4' : 'left-4'} bg-brand-dark text-white text-xs font-bold px-4 py-2 rounded-full z-20 print-bg-brand-teal shadow-md">${prod.vol}</span>
                                 </div>
 
                                 <div class="w-full md:w-7/12 flex flex-col justify-center">
@@ -809,7 +839,7 @@
                                     <p class="${descClass} mb-6 leading-relaxed">${isKitVolume ? prod.desc : `"${prod.desc}"`}</p>
                                     
                                     ${prod.dica ? `
-                                    <div class="bg-[#eaf6f5] p-6 rounded-2xl border-l-4 border-brand-teal mb-2 relative print:bg-gray-50 print:border-gray-300 shadow-sm">
+                                    <div class="bg-[#eaf6f5] p-6 rounded-2xl border-l-4 border-brand-teal mb-6 relative print:bg-gray-50 print:border-gray-300 shadow-sm">
                                         <h5 class="text-brand-dark font-bold text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
                                             <div class="bg-brand-teal text-white p-1.5 rounded-full"><i data-lucide="lightbulb" class="w-4 h-4"></i></div>
                                             Modo de Uso / Dica
@@ -823,15 +853,15 @@
                                     </div>
                                     ` : ''}
 
-                                    <!-- Renderização da Timeline Roxa Minimalista abaixo do Modo de Uso -->
+                                    <!-- Renderização do Protocolo Roxo (Dica de Protocolo) -->
                                     ${protocolHtml}
 
-                                    <div class="mb-4 mt-4 flex flex-wrap items-center gap-3">
+                                    <div class="mb-4 mt-6 flex flex-wrap items-center gap-3">
                                         <span class="bg-brand-light text-brand-dark font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full">Ativos / Foco</span>
                                         <span class="text-sm text-gray-600 font-medium">${prod.ativos}</span>
                                     </div>
                                     
-                                    <!-- Tabela de Preços (Condição Dinâmica) -->
+                                    <!-- Tabela de Preços -->
                                     <div class="mt-auto pt-6">
                                         ${priceDeHtml}
                                         
@@ -851,7 +881,7 @@
                                                 <span class="text-xl md:text-2xl font-extrabold leading-none">${prod.pix}</span>
                                             </div>
                                             
-                                            <!-- Renderiza a Oferta de 2ª Unidade ou Combo, se existir -->
+                                            <!-- Oferta -->
                                             ${promoHtml}
                                         </div>
                                     </div>
@@ -879,30 +909,14 @@
             `;
 
             container.innerHTML = htmlContent;
-
-            // Re-renderiza os ícones gerados dinamicamente
             lucide.createIcons();
         }
 
-        // Executa a função ao carregar
         window.onload = renderCatalog;
 
+        // API Assistant Script (mantido)
         const apiKey = "";
         let chatHistory = [];
-
-        const getCatalogContext = () => {
-            let context = "Aqui está o banco de dados de produtos da Buona Vita disponível no catálogo atual:\n\n";
-            catalogData.forEach(vol => {
-                context += `Categoria: ${vol.title} - ${vol.subtitle}\n`;
-                vol.products.forEach(p => {
-                    context += `- Produto: ${p.name} (${p.vol}) | Ativos: ${p.ativos} | Indicação: ${p.desc}\n`;
-                });
-                context += '\n';
-            });
-            return context;
-        };
-
-        const systemPrompt = "Você é a Buona IA, especialista em dermocosméticos e esteticista virtual da marca Buona Vita. Seu objetivo é ajudar esteticistas a montarem protocolos, encontrarem produtos e entenderem ativos. Use ESTRITAMENTE o catálogo fornecido para fazer recomendações. Se alguém pedir um produto que não está no catálogo, informe gentilmente que no momento só temos essas opções. Seja extremamente profissional, acolhedora, demonstre muito conhecimento em estética, biossegurança e fisiologia da pele. Responda em português do Brasil e use negrito (**) para destacar o nome dos produtos recomendados.\n\n" + getCatalogContext();
 
         function toggleChat() {
             const chatWindow = document.getElementById('ai-chat-window');
@@ -917,79 +931,53 @@
 
             inputEl.value = '';
             addMessageToUI('user', message);
-
             chatHistory.push({ role: 'user', parts: [{ text: message }] });
 
-            addMessageToUI('ai', '<span class="flex items-center gap-2"><i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Consultando literatura estética...</span>', true);
+            addMessageToUI('ai', '<span class="flex items-center gap-2"><i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Consultando...</span>', true);
             lucide.createIcons();
 
             try {
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-                const payload = {
-                    contents: chatHistory,
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    }
-                };
-
-                const response = await fetch(apiUrl, {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify({ contents: chatHistory })
                 });
 
                 const result = await response.json();
+                document.getElementById('ai-loading')?.remove();
 
-                const loadingNode = document.getElementById('ai-loading');
-                if (loadingNode) loadingNode.remove();
-
-                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content) {
+                if (result.candidates?.[0]?.content) {
                     const aiText = result.candidates[0].content.parts[0].text;
                     chatHistory.push({ role: 'model', parts: [{ text: aiText }] });
                     addMessageToUI('ai', aiText);
-                } else {
-                    addMessageToUI('ai', 'Desculpe, ocorreu um erro na interpretação dos ativos. Tente reformular a pergunta.');
                 }
             } catch (error) {
-                console.error("Gemini API Error:", error);
-                const loadingNode = document.getElementById('ai-loading');
-                if (loadingNode) loadingNode.remove();
-                addMessageToUI('ai', 'Erro de conexão com o banco de dados. Tente novamente mais tarde.');
+                document.getElementById('ai-loading')?.remove();
+                addMessageToUI('ai', 'Erro de conexão. Tente novamente mais tarde.');
             }
         }
 
         function addMessageToUI(sender, text, isLoading = false) {
             const messagesEl = document.getElementById('ai-chat-messages');
             const div = document.createElement('div');
-
             div.className = sender === 'user'
                 ? "bg-brand-dark text-white p-3 rounded-xl rounded-tr-none self-end max-w-[85%] shadow-sm"
                 : "bg-white border border-gray-100 text-brand-dark p-3 rounded-xl rounded-tl-none self-start max-w-[90%] shadow-sm";
-
             if (isLoading) div.id = 'ai-loading';
-
-            let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            formattedText = formattedText.replace(/\n/g, '<br>');
-
-            div.innerHTML = formattedText;
+            div.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
             messagesEl.appendChild(div);
             messagesEl.scrollTop = messagesEl.scrollHeight;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('ai-chat-input')?.addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    sendMessage();
-                }
+            document.getElementById('ai-chat-input')?.addEventListener('keypress', e => {
+                if (e.key === 'Enter') { e.preventDefault(); sendMessage(); }
             });
         });
-
     </script>
 
     <!-- Chatbot IA Widget -->
     <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end no-print">
-
         <div id="ai-chat-window" class="hidden w-80 md:w-96 h-[500px] bg-brand-light rounded-2xl shadow-2xl mb-4 overflow-hidden border border-gray-200 flex-col">
             <div class="bg-brand-teal text-white p-4 flex justify-between items-center shadow-md z-10 relative overflow-hidden">
                 <div class="absolute -right-4 -top-4 w-16 h-16 bg-white opacity-10 rounded-full blur-md"></div>
@@ -1005,14 +993,13 @@
 
             <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto flex flex-col gap-3 text-sm">
                 <div class="bg-white border border-gray-100 text-brand-dark p-3 rounded-xl rounded-tl-none self-start max-w-[90%] shadow-sm">
-                    Olá, colega esteticista! 🌿 Sou a <strong>Buona IA</strong>. Analisei todo este catálogo (63 itens) e estou pronta para te ajudar a criar protocolos, encontrar produtos ideais para suas pacientes ou tirar dúvidas sobre nossos ativos científicos.
-                    <br><br>Como posso ajudar a elevar os resultados da sua clínica hoje?
+                    Olá! Sou a <strong>Buona IA</strong>. Posso te ajudar a criar protocolos e tirar dúvidas sobre nossos dermocosméticos. Como posso ajudar hoje?
                 </div>
             </div>
 
             <div class="p-3 bg-white border-t border-gray-200 flex gap-2 items-center">
-                <input type="text" id="ai-chat-input" placeholder="Ex: Protocolo para pele madura oleosa..." class="flex-1 bg-gray-50 border border-gray-200 rounded-full px-4 py-2.5 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal text-sm transition-all text-gray-700">
-                <button onclick="sendMessage()" class="bg-brand-dark text-white p-2.5 rounded-full hover:bg-brand-teal transition-all shadow-md transform hover:scale-105" id="ai-send-btn" title="Enviar Mensagem">
+                <input type="text" id="ai-chat-input" placeholder="Digite aqui..." class="flex-1 bg-gray-50 border border-gray-200 rounded-full px-4 py-2.5 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal text-sm transition-all text-gray-700">
+                <button onclick="sendMessage()" class="bg-brand-dark text-white p-2.5 rounded-full hover:bg-brand-teal transition-all shadow-md transform hover:scale-105">
                     <i data-lucide="send" class="w-4 h-4 ml-0.5"></i>
                 </button>
             </div>
@@ -1025,5 +1012,4 @@
     </div>
 
 </body>
-
 </html>
