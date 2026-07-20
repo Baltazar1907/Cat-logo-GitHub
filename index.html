@@ -158,7 +158,8 @@
                         desc: "Dermocosmético vegano e multifuncional desenvolvido para higienizar, demaquilar e promover emoliência da pele com suavidade, sem comprometer sua proteção natural. Sua fórmula combina agentes emolientes e calmantes que auxiliam na remoção de maquiagem, impurezas e resíduos, deixando a pele macia, limpa e confortável. Também pode ser utilizada como amolecedor de comedões, especialmente em gestantes, peles sensíveis ou pessoas que não podem utilizar produtos com trietanolamina.<br><br><b>Indicação:</b> todos os tipos de pele, inclusive gestantes e peles sensibilizadas.<br><br><b>Diferenciais:</b> ação demaquilante, higienizante e emoliente; pode auxiliar no amolecimento de comedões e ser associada ao vapor de ozônio.",
                         ativos: "Estearato de Octila 50 mg/g • Extrato de Camomila 20 mg/g.", 
                         dica: "Aplicar quantidade suficiente, higienizando os locais a serem trabalhados, com movimentos circulares e ascendentes. Retirar, primeiramente com papel toalha para remover o excesso do produto e depois com toalhinha ou algodão umedecido em água filtrada. Prosseguir com o trabalho em cabine.", 
-                        rendimento: "167 aplicações"
+                        rendimento: "167 aplicações",
+                        isGestante: true
                     },
                     {
                         name: "Emulsão de Limpeza 140ml", vol: "140ml", de: "R$ 64,90", cartao: "R$ 38,90", pix: "R$ 36,96", promo2: "R$ 33,80",
@@ -167,7 +168,8 @@
                         desc: "Emulsão de limpeza que remove maquiagem, resíduos e impurezas sem ressecar a pele. Mantém o equilíbrio da barreira cutânea, proporcionando sensação de maciez, conforto e hidratação desde a higienização.",
                         ativos: "Estearato de Octila 50 mg/g + Extrato de Camomila 20 mg/g.", 
                         dica: "Aplicar sobre a pele úmida com movimentos circulares e remover com água ou algodão umedecido.", 
-                        rendimento: "45 aplicações"
+                        rendimento: "45 aplicações",
+                        isGestante: true
                     },
                     {
                         name: "Sabonete Líquido 1L", vol: "1 Litro", de: "R$ 126,90", cartao: "R$ 76,10", pix: "R$ 72,30", promo2: "R$ 64,50",
@@ -226,64 +228,60 @@
                     {
                         name: "Loção Tônica 500ml", vol: "500ml", de: "R$ 126,90", cartao: "R$ 69,90", pix: "R$ 66,41", promo2: "R$ 59,00",
                         img: "locao_tonica.png",
-                        desc: "Loção tônica desenvolvida para restabelecer o pH fisiológico da pele após a higienização, promovendo sensação de frescor e preparando a pele para melhor absorção dos ativos dos tratamentos estéticos.",
-                        ativos: "Aloe Vera • Alantoína • Extratos Vegetais Calmantes.", 
+                        protocolo: ["Amolecedor de Comedões", "Loção Tônica", "Máscara Descongestionante"],
+                        desc: "Dermocosmético desenvolvido para tonificar, equilibrar e preparar a pele após a higienização, complementando a limpeza e favorecendo uma pele mais fresca e receptiva aos próximos passos do protocolo estético. Ideal para uso profissional em protocolos faciais e corporais, auxilia na normalização do pH da pele e pode ser utilizada antes da aplicação de séruns, máscaras, argilas e outros dermocosméticos de tratamento.<br><br><b>Indicação:</b> todos os tipos de pele, conforme avaliação profissional.<br><br><b>Diferenciais:</b> complementa a higienização, ajuda a equilibrar o pH cutâneo, prepara a pele para os ativos de tratamento e pode ser utilizada na diluição de máscaras de argila.",
+                        ativos: "Extrato de Ginseng 20 mg/g • Extrato de Camomila 20 mg/g • Extrato de Aloe Vera 20 mg/g • Extrato de Hera 20 mg/g", 
                         dica: "Aplicar com algodão sobre a pele limpa antes dos protocolos faciais ou corporais.", 
                         rendimento: "250 aplicações"
                     },
                     {
                         name: "Loção Termal 120ml", vol: "120ml", de: "R$ 126,60", cartao: "R$ 75,90", pix: "R$ 72,11", promo2: "R$ 66,10",
                         img: "locao_termal.png",
-                        desc: "Loção multifuncional que hidrata, acalma e reequilibra a pele, reduzindo desconfortos após procedimentos estéticos. Promove sensação imediata de frescor e auxilia na recuperação da barreira cutânea.",
-                        ativos: "Oligoelementos • Minerais • Aloe Vera.", 
+                        protocolo: ["Emulsão de Limpeza", "Loção Termal", "Solar Hidra Active"],
+                        desc: "Loção multifuncional que hidrata, acalma e reequilibra a pele, reduzindo desconfortos após procedimentos estéticos. Promove sensação imediata de frescor e auxilia na recuperação da barreira cutânea. Este Isotônico de frescor imediato apresenta fórmula exclusiva, com o sistema HDNR, combina oligoelementos e aminoácidos que trabalham em sinergia para promover nutrição tecidual e acalmar áreas sensibilizadas, oferecendo conforto imediato.",
+                        ativos: "QUIDITAT SRC 20mg/g • PHYSIOGENYL 10 mg/g • SALICILATO DE METILA 1,5 mg/g", 
                         dica: "Borrifar sobre a pele limpa sempre que necessário ou utilizar durante protocolos estéticos.", 
-                        rendimento: "68 aplicações"
+                        rendimento: "82 aplicações",
+                        isGestante: true
                     },
                     {
                         name: "Peeling 500g", vol: "500g", de: "R$ 160,40", cartao: "R$ 83,00", pix: "R$ 78,85", promo2: "R$ 72,00",
                         img: "peeling_500g.png",
-                        protocolo: ["Emulsão de Limpeza", "Peeling", "Stone Gold"],
-                        desc: "Esfoliante mecânico com efeito gomagem em tamanho profissional estendido. Remove impurezas e células mortas.",
-                        ativos: "Extrato de Camomila, Esferas Vulcânicas.", 
-                        dica: "Faça massagem circular até o produto aglutinar e esfarelar completamente.", 
-                        rendimento: "260 aplicações"
+                        protocolo: ["Emulsão de Limpeza", "Peeling", "Creme Emoliente"],
+                        desc: "Dermocosmético vegano desenvolvido para promover esfoliação física, limpeza profunda e renovação da pele, removendo células mortas, impurezas e excesso de oleosidade. Sua ação por efeito gomagem ajuda a deixar a pele mais uniforme, luminosa, macia e preparada para receber os ativos das próximas etapas do protocolo.<br><br><b>Indicação:</b> uso facial e corporal, em todos os fototipos, conforme avaliação profissional.<br><br><b>Diferenciais:</b> livre de polietileno, grânulos sem arestas, promove renovação celular e pode ser utilizado em gestantes.",
+                        ativos: "Arnica 20mg/g • Esferas Vulcânicas 40mg/g • TACC (Esteres de Coco) 5 mg/g", 
+                        dica: "Espalhe o produto sobre a pele, evitando a área dos olhos. Faça leve massagem com movimentos circulares até o produto esfoliar completamente. Retirar com algodão umedecido.", 
+                        rendimento: "189 aplicações",
+                        isGestante: true
                     },
                     {
                         name: "Peeling 250g", vol: "250g", de: "R$ 106,00", cartao: "R$ 49,90", pix: "R$ 47,41",
                         img: "peeling250g.png",
-                        protocolo: ["Emulsão de Limpeza", "Peeling", "Stone Gold"],
-                        desc: "Esfoliante mecânico com efeito gomagem. Remove impurezas e células mortas da pele, dando mais luminosidade.",
-                        ativos: "Extrato de Camomila, Esferas Vulcânicas.", 
-                        dica: "Faça massagem circular até o produto aglutinar e esfarelar completamente.", 
-                        rendimento: "130 aplicações"
+                        protocolo: ["Emulsão de Limpeza", "Peeling", "Loção Termal"],
+                        desc: "Dermocosmético vegano desenvolvido para promover esfoliação física, limpeza profunda e renovação da pele, removendo células mortas, impurezas e excesso de oleosidade. Sua ação por efeito gomagem ajuda a deixar a pele mais uniforme, luminosa, macia e preparada para receber os ativos das próximas etapas do protocolo.<br><br><b>Indicação:</b> uso facial e corporal, em todos os fototipos, conforme avaliação profissional.<br><br><b>Diferenciais:</b> livre de polietileno, grânulos sem arestas, promove renovação celular e pode ser utilizado em gestantes.",
+                        ativos: "Arnica 20mg/g • Esferas Vulcânicas 40mg/g • TACC (Esteres de Coco) 5 mg/g", 
+                        dica: "Espalhe o produto sobre a pele, evitando a área dos olhos. Faça leve massagem com movimentos circulares até o produto esfoliar completamente. Retirar com algodão umedecido.", 
+                        rendimento: "95 aplicações",
+                        isGestante: true
                     },
                     {
                         name: "Máscara Descongestionante 500g", vol: "500g", de: "R$ 147,40", cartao: "R$ 76,90", pix: "R$ 73,06",
                         img: "mascaradescongestionante.png",
+                        protocolo: ["Creme Emoliente", "Máscara Descongestionante", "Loção Termal"],
                         desc: "Máscara dermocosmética vegana desenvolvida para acalmar, descongestionar e restaurar a pele após limpezas de pele, extração de comedões, drenagem de acne, depilação e demais procedimentos estéticos.",
-                        ativos: "Betaglucan • Extrato de Camomila 20 mg/g • Extrato de Erva-Doce 20 mg/g • Extrato de Sálvia 20 mg/g • Extrato de Melissa 20 mg/g • Extrato de Ginkgo Biloba 20 mg/g.", 
+                        ativos: "Acticalm 20 mg/g • Betaglucan • Extrato de Camomila 20 mg/g • Extrato de Erva-Doce 20 mg/g • Extrato de Sálvia 20 mg/g • Extrato de Melissa 20 mg/g • Extrato de Ginkgo Biloba 20 mg/g.", 
                         dica: "Após o procedimento estético, aplique uma camada uniforme e deixe agir por 20 minutos. Remova completamente. Após a depilação, aplique uma fina camada e deixe absorver. Também pode ser base para drenagem linfática manual.", 
-                        rendimento: "84 aplicações",
+                        rendimento: "175 aplicações",
                         isGestante: true
                     },
                     {
                         name: "Solar Hidra Active FPS 30 60g", vol: "60g", de: "N/A", cartao: "R$ 126,90", pix: "R$ 120,56", promo2: "R$ 20,00",
                         img: "solar_hidra_active.png",
-                        protocolo: ["Dermocosmético do tratamento", "Solar Hidra Active FPS 30", "Reaplicação do próprio Solar Hidra Active"],
-                        desc: "O Solar Hidra Active FPS 30 protege contra os raios UVA, UVB, Luz Azul e Luz Visível enquanto hidrata e fortalece a pele. Sua tecnologia cria um efeito de segunda pele que protege contra a poluição, estimula a produção de colágeno e ajuda a prevenir o envelhecimento precoce.",
+                        protocolo: ["Clear Peel", "Loção Termal", "Finalizar procedimentos com Solar Hidra Active"],
+                        desc: "Protetor solar dermocosmético vegano, oil free, desenvolvido para oferecer proteção diária contra raios UVA, UVB e luz visível, ajudando a prevenir o fotoenvelhecimento e os danos causados pelas agressões externas.<br>Sua fórmula combina fotoproteção com ativos antioxidantes, antiglicantes, hidratantes e antipoluição, proporcionando toque seco, efeito matte e sensorial aveludado. Conta ainda com Carnosina, peptídeo antiglicante que ajuda a proteger proteínas e fibras de colágeno contra os efeitos da glicação.<br><br><b>Indicação:</b> todos os tipos de pele, inclusive peles oleosas, acneicas, sensíveis e sensibilizadas. Pode ser utilizado por gestantes.<br><b>Diferenciais:</b> proteção UVA, UVB e luz visível, ação antioxidante e antipoluição, toque seco, resistência à água e cuidado antiglicante.",
                         ativos: "Dry-Flo Pure 30 mg/g • Lexfeel 20 mg/g • Lexfilm Sun 20 mg/g • Glycofilm 5 mg/g • Trehalose 5 mg/g • Carnosine 1 mg/g • FloraGLO Lutein 0,5 mg/g.", 
-                        dica: "Aplicar generosamente 30 minutos antes da exposição solar e reaplicar a cada 3 horas ou sempre que necessário.", 
+                        dica: "Após a limpeza facial e hidratação da pele, aplicar o protetor solar no rosto de forma generosa sobre a pele seca. Se for se expor aos sol, aplicar 30 minutos antes da exposição. O filtro solar deve ser aplicado todos os dias, mesmo quando estiver nublado, no mínimo 30 minutos antes da exposição solar. A reaplicação padrão deve ser feita de 3 em 3 horas, mas esse intervalo diminui (de 2 em 2 horas) em casos de transpiração excessiva, exposição solar prolongada ou após sair da água.", 
                         rendimento: "60 aplicações",
-                        isGestante: true
-                    },
-                    {
-                        name: "Alívio P&P 150ml", vol: "150ml", de: "R$ 99,90", cartao: "R$ 59,90", pix: "R$ 56,91", promo2: "R$ 49,90",
-                        img: "aliviopep.png",
-                        protocolo: ["Óleo Flan", "Alívio P&P", "Bio Lift"],
-                        desc: "Alívio imediato para pernas, pés e músculos cansados. Loção refrescante com ação analgésica, anti-inflamatória e antiedematosa. Promove alívio imediato das dores musculares, reduz o inchaço e a sensação de pernas e pés cansados, proporcionando conforto, leveza e bem-estar. Ideal para massagens terapêuticas, pós-operatório e cuidados diários. Indicado também para gestantes.",
-                        ativos: "Castanha-da-Índia • Arnica • Óleo de Andiroba • Salicilato de Metila • Mentol • Ureia • Óleo de Semente de Uva.", 
-                        dica: "Com a pele limpa, aplique nas regiões desejadas realizando leves manobras de massagem até completa absorção. Pode ser associado à drenagem linfática, massagens relaxantes e terapêuticas.", 
-                        rendimento: "80 aplicações",
                         isGestante: true
                     }
                 ]
@@ -298,16 +296,17 @@
                         name: "Luminance 5X 30g", vol: "30g", de: "R$ 137,60", cartao: "R$ 82,50", pix: "R$ 78,38", promo2: "R$ 71,80",
                         img: "luminance.png",
                         protocolo: ["Emulsão de Limpeza", "Luminance 5X", "Solar Hidra Active"],
-                        desc: "Sérum multifuncional desenvolvido para prevenir e tratar manchas solares, hormonais, pós-inflamatórias, senis e melasma. Atua em todas as fases da produção da melanina, promovendo uniformização do tom da pele, luminosidade e prevenção de novas hipercromias.",
+                        desc: "Dermocosmético vegano desenvolvido para uniformizar o tom da pele, auxiliar no clareamento de hipercromias e prevenir o surgimento de novas manchas.<br>Sua fórmula combina ativos despigmentantes, antioxidantes e regeneradores que atuam em sinergia para reduzir a produção de melanina, melhorar a luminosidade e favorecer uma pele mais uniforme, protegida e revitalizada.<br><br><b>Indicação:</b> manchas solares, melasma, hiperpigmentação pós-inflamatória, manchas senis e alterações de tonalidade da pele.<br><b>Diferenciais:</b> ação clareadora e uniformizadora, efeito antioxidante, auxílio na prevenção do envelhecimento e recuperação da barreira cutânea. Pode ser associado a IONIZAÇÃO com CORRENTE GALVÂNICA.<br><br>São 5 resultados em apenas um produto:<br>- Controle<br>- Proteção<br>- Modulação<br>- Normalização<br>- Iluminação da pele",
                         ativos: "Niacinamida 20 mg/g • Biofoetida 20 mg/g • Belides 10 mg/g • Óleo de Rosa Mosqueta 10 mg/g.", 
                         dica: "Aplicar de 1 a 2 vezes ao dia sobre a pele limpa. Em protocolos profissionais pode ser associado à ionização com corrente galvânica, eletroporação, microcorrentes, LED e microagulhamento. Uso diário de protetor solar.", 
-                        rendimento: "60 aplicações"
+                        rendimento: "36 aplicações",
+                        isGestante: true
                     },
                     {
                         name: "Clear Peel 140ml", vol: "140ml", de: "R$ 147,90", cartao: "R$ 78,90", pix: "R$ 74,96", promo2: "R$ 74,20",
                         img: "clear_peel.png",
                         protocolo: ["Emulsão de Limpeza", "Clear Peel", "Vita C+A"],
-                        desc: "O Clear Peel é um peeling químico desenvolvido para promover uma renovação celular segura, uniforme e eficaz. Sua fórmula combina Ácido Glicólico 10% com os ácidos Málico, Cítrico e Lático, proporcionando uma esfoliação química que acelera a formação de uma nova camada de pele.",
+                        desc: "Peeling químico seguro desenvolvido para promover renovação celular, esfoliação química e refinamento da textura da pele, auxiliando na remoção de células mortas e na melhora da uniformidade cutânea.<br><br><b>Indicação:</b> protocolos faciais e corporais de renovação celular, textura irregular, oleosidade e cuidados associados a manchas e sinais de envelhecimento.Fototipos I II e III<br><br><b>Diferenciais:</b> ação queratolítica e esfoliativa, acelera a renovação celular, melhora a textura e potencializa protocolos estéticos.",
                         ativos: "Ácido Glicólico 100 mg/g • Biofruits (AHAs) 20 mg/g.", 
                         dica: "Aplicar uma fina camada sobre a pele limpa e seca, deixar agir conforme avaliação profissional e remover completamente com água. Finalizar obrigatoriamente com protetor solar.", 
                         rendimento: "65 aplicações"
@@ -315,30 +314,31 @@
                     {
                         name: "Sérum Mandélico 60ml", vol: "60ml", de: "R$ 55,10", cartao: "R$ 33,10", pix: "R$ 31,45",
                         img: "serum_mandelico.png",
-                        protocolo: ["Emulsão de Limpeza", "Sérum Mandélico", "Luminance 5X"],
-                        desc: "Peeling químico vegano à base de Ácido Mandélico 10%, desenvolvido para promover renovação celular, uniformizar o tom da pele e auxiliar no tratamento da acne, melasma, hiperpigmentações, estrias e fotoenvelhecimento.",
+                        protocolo: ["Higisystem", "Serum Mandepeel", "Serum C+D"],
+                        desc: "Este Sérum é um Peeling químico profissional vegano desenvolvido para promover renovação celular, uniformização do tom e melhora da textura da pele com ação progressiva e segura.<br>Formulado com Ácido Mandélico 10% , auxilia no cuidado de peles com acne, manchas, melasma, fotoenvelhecimento e alterações de textura, favorecendo uma pele mais uniforme, luminosa e revitalizada.<br><br><b>Indicação:</b> todos os fototipos, especialmente fototipos mais altos, além de peles acneicas e protocolos de clareamento e renovação facial e corporal.<br><br><b>Diferenciais:</b> ação renovadora, clareadora e antisséptica; pode ser utilizado em todos os fototipos e em diferentes épocas do ano, conforme avaliação profissional.",
                         ativos: "Ácido Mandélico 100 mg/g (10%).", 
                         dica: "Com a pele completamente seca, aplicar uma fina camada sobre a região desejada, deixar agir por aproximadamente 10 minutos e enxaguar abundantemente. Durante o tratamento, recomenda-se o uso diário de protetor solar.", 
-                        rendimento: "65 aplicações",
+                        rendimento: "57 Aplicações",
                         isGestante: true
                     },
                     {
                         name: "Vita C+A 60g", vol: "60g", de: "R$ 159,00", cartao: "R$ 83,00", pix: "R$ 78,85", promo2: "R$ 69,90",
                         img: "vita_ca.png",
                         protocolo: ["Emulsão de Limpeza", "Vita C+A", "Sérum C+D"],
-                        desc: "O Vita C+A é um dermocosmético multifuncional que combina nanotecnologia de Vitamina C, Retinol-Like vegetal e enzimas de abóbora para promover uma renovação suave e eficaz da pele. Auxilia no clareamento de manchas, estimula a produção de colágeno e reduz rugas.",
+                        desc: "Dermocosmético desenvolvido para promover renovação celular, hidratação, luminosidade e uniformização do tom da pele, combinando ação antioxidante com esfoliação enzimática suave.<br>Sua fórmula auxilia na remoção de células mortas, estimula a renovação da pele e contribui para a melhora de manchas, textura irregular, linhas finas e sinais de envelhecimento, deixando a pele mais macia, hidratada e revitalizada.<br><br><b>Indicação:</b> peles com manchas, sinais de envelhecimento, textura irregular, opacidade e necessidade de renovação e hidratação.<br><br><b>Diferenciais:</b> ação antioxidante e enzimática, promove renovação celular sem fotossensibilização, auxilia no clareamento e pode ser utilizada em protocolos profissionais ou como cuidado home care.",
                         ativos: "Nanovetor de Vitamina C 20 mg/g • Revinage® 10 mg/g • Pumpkin Enzyme 100 mg/g.", 
-                        dica: "No uso profissional, aplicar uma camada uniforme, deixar agir por 20 minutos e remover. No home care, aplicar uma fina camada antes de dormir, sem remover. Utilizar protetor solar durante o dia.", 
-                        rendimento: "60 aplicações"
+                        dica: "No uso profissional, aplicar uma camada uniforme, deixar agir por 20 minutos (dependendo do protocolo retirar ou manter) . No home care, aplicar uma fina camada antes de dormir, sem remover. Utilizar protetor solar durante o dia.", 
+                        rendimento: "49 aplicações",
+                        isGestante: true
                     },
                     {
                         name: "Sérum ProSec 50ml", vol: "50ml", de: "R$ 159,90", cartao: "R$ 79,90", pix: "R$ 75,91",
                         img: "serum_prosec.png",
                         protocolo: ["Normaclean", "ProSec", "Solar Hidra Active FPS 30"],
-                        desc: "O Sérum ProSec foi desenvolvido para o cuidado diário das peles oleosas e acneicas. Controla a produção excessiva de oleosidade, reduz poros dilatados, auxilia na diminuição de cravos e espinhas e proporciona efeito matte de longa duração.",
+                        desc: "Sérum desenvolvido para auxiliar no controle da oleosidade, acne e imperfeições da pele, atuando de forma completa nos principais sinais associados ao desequilíbrio da pele acneica.<br>Sua fórmula combina ativos seborreguladores, anti-inflamatórios, cicatrizantes, hidratantes e renovadores, ajudando a reduzir brilho excessivo, poros aparentes, vermelhidão, pápulas e comedões, além de contribuir para a prevenção de marcas e hiperpigmentações pós-inflamatórias.<br><br><b>Indicação:</b> peles oleosas, acneicas e com tendência à formação de comedões e inflamações.<br><br><b>Diferenciais:</b> ação seborreguladora, anti-inflamatória, purificante, cicatrizante e hidratante; auxilia na recuperação da barreira cutânea e na prevenção de sequelas da acne.",
                         ativos: "Cytobiol Iris 40 mg/g • Niacinamida 30 mg/g • Ácido Salicílico 20 mg/g • Alfa Bisabolol 3 mg/g • Alantoína 1 mg/g.", 
-                        dica: "Aplicar duas vezes ao dia sobre a pele limpa ou associar aos protocolos estéticos.", 
-                        rendimento: "50 aplicações"
+                        dica: "Indicado USO DIÁRIO para gerenciamento das alterações da pele, sendo aplicado duas vezes ao dia. Para USO PROFISSIONAL em consultório, são muitas as formas de associar aos tratamentos, consulte protocolos.", 
+                        rendimento: "39 aplicações"
                     },
                     {
                         name: "Normaclean 140ml", vol: "140ml", de: "N/A", cartao: "R$ 96,80", pix: "R$ 91,96", promo2: "R$ 18,00",
@@ -486,7 +486,7 @@
                     {
                         name: "Fluido Térmico 140ml", vol: "140ml", de: "R$ 87,90", cartao: "R$ 52,70", pix: "R$ 50,07", promo2: "R$ 45,90",
                         img: "fluido_termico140ml.png",
-                        protocolo: ["Nano Lipo", "Fluido Térmico", "Creme Lipoex"],
+                        protocolo: ["Higisystem", "Fluido Térmico", "Lipoflex"],
                         desc: "Fluido com ação termogênica que estimula a circulação local, favorece a permeação dos ativos e auxilia nos tratamentos de gordura localizada, celulite e flacidez.",
                         ativos: "Nicotinato de Metila • Cafeína • Centella Asiática • Castanha-da-Índia.", 
                         dica: "Aplicar na região desejada antes do Lipoflex ou das massagens modeladoras até completa absorção.", 
@@ -513,7 +513,7 @@
                     {
                         name: "Creme de Algas 1kg", vol: "1kg", de: "R$ 243,70", cartao: "R$ 89,90", pix: "R$ 85,41", promo2: "R$ 78,20",
                         img: "creme_de_algas.png",
-                        protocolo: ["Fluido Térmico", "Creme de Algas", "Stone Gold"],
+                        protocolo: ["Fluido Térmico", "Creme de Algas", "Nano Lipo"],
                         desc: "Creme corporal enriquecido com algas marinhas, desenvolvido para hidratar profundamente, remineralizar e revitalizar a pele. Auxilia na melhora da elasticidade, favorece a nutrição dos tecidos.",
                         ativos: "Extrato de Algas Marinhas • Oligoelementos • Minerais.", 
                         dica: "Aplicar sobre a pele limpa realizando massagens até completa absorção ou conforme o protocolo estético.", 
@@ -522,7 +522,7 @@
                     {
                         name: "Balm Corporal 1kg", vol: "1kg", de: "R$ 248,40", cartao: "R$ 99,90", pix: "R$ 94,91", promo2: "R$ 86,90",
                         img: "balm_corporal.png",
-                        protocolo: ["Peeling Buona Vita", "Balm Corporal", "Solar Hidra Active nas áreas expostas"],
+                        protocolo: ["Peeling", "Balm Corporal", "Nano Lipo"],
                         desc: "Dermocosmético ortomolecular desenvolvido para combater a flacidez corporal, promovendo hidratação profunda, firmeza e elasticidade. Sua combinação exclusiva de 8 tipos de Ácido Hialurônico e Colágeno Vegetal.",
                         ativos: "8 Ácidos Hialurônicos • Colágeno Vegetal Hidrolisado 10 mg/g.", 
                         dica: "Aplicar a quantidade necessária sobre a pele e realizar massagens modeladoras ou relaxantes até completa absorção.", 
@@ -585,19 +585,18 @@
                     {
                         name: "Segunda Pele 200g", vol: "200g", de: "N/A", cartao: "R$ 140,00", pix: "R$ 133,00", promo2: "R$ 20,00",
                         img: "segunda_pele.png",
-                        protocolo: ["Sérum Nano Factor", "Segunda Pele", "Solar Hidra Active FPS 30"],
-                        desc: "Máscara facial de alta performance. Promove hidratação intensiva, efeito calmante e recuperação da barreira cutânea.",
+                        desc: "Dermocosmético vegano e multifuncional desenvolvido para hidratar, nutrir, dessensibilizar e reparar a barreira cutânea, promovendo conforto imediato e proteção para peles fragilizadas.<br><br>Sua fórmula com Base Verde e HDNR System atua na recuperação da estrutura da pele, reforçando o manto hidrolipídico e auxiliando na redução de ressecamento, descamação, sensibilidade e desconforto.<br><br><b>Indicação:</b> todos os tipos de pele, especialmente peles secas, sensibilizadas ou fragilizadas por fatores internos e externos. Pode ser utilizada no rosto e no corpo e é permitida para gestantes.<br><br><b>Diferenciais:</b> hidratação profunda, ação neurocalmante, reparadora e biomoduladora; auxilia no fortalecimento da barreira cutânea e proporciona toque leve, aveludado e rápida absorção.",
                         ativos: "Ácido Hialurônico, Aloe Vera, Alantoína.", 
                         dica: "Ideal após limpeza de pele, microagulhamento e peelings.", 
-                        rendimento: "40 aplicações"
+                        rendimento: "40 aplicações",
+                        isGestante: true
                     },
                     {
-                        name: "Óleo Potencializador Gestar 20ml", vol: "20ml", de: "R$ 86,30", cartao: "R$ 86,30", pix: "R$ 81,99", promo2: "R$ 15,00",
+                        name: "Óleo Potencializador 30ml", vol: "30ml", de: "R$ 86,30", cartao: "R$ 86,30", pix: "R$ 81,99", promo2: "R$ 15,00",
                         img: "oleo_potencializador.png",
-                        protocolo: ["Alívio P&P", "Óleo Potencializador Gestar", "Bio Lift"],
                         desc: "Óleo de rosa mosqueta 100% natural, ideal para prevenir as estrias e promover uniformidade ao tom da pele.",
                         ativos: "Óleo de Rosa Mosqueta.", 
-                        dica: "Associar algumas gotas do óleo com o Creme Bio Lift para aumentar a hidratação.", 
+                        dica: "<b>Para prevenção e tratamento das estrias:</b><br>Associar algumas gotas do óleo com o produto cosmético Bio Lift para aumentar a hidratação da pele e prevenir as estrias durante a gestação.<br><br><b>Para prevenção e tratamento das manchas:</b><br>Aplicar à noite com a pele bem limpa, algumas gotas do óleo sobre a região desejada (rosto ou corpo), massageando com movimentos circulares até total absorção do produto. Nos casos de peles muito secas e descamativas, recomenda-se 2 aplicações diárias, pela manhã e à noite, sempre incentivando o uso de filtro solar após aplicação.<br><br>Quando seu uso é feito puro, aplicando-se poucas gotas sobre a região desejada, com massagem circular até sua total absorção (2 a 3 minutos).", 
                         rendimento: "60 aplicações",
                         isGestante: true
                     },
@@ -609,6 +608,16 @@
                         ativos: "Carnosine 1 mg/g • Dry-Flo Pure 30 mg/g • FloraGlo Lutein 0,5 mg/g • Glycofilm 5 mg/g • Lexfeel 20 mg/g • Lexfilm Sun 20 mg/g • Trehalose 5 mg/g.",
                         dica: "Aplicar uniformemente sobre a pele limpa e seca antes da exposição solar. Reaplicar sempre que necessário.",
                         rendimento: "170 aplicações",
+                        isGestante: true
+                    },
+                    {
+                        name: "Alívio P&P 150ml", vol: "150ml", de: "R$ 99,90", cartao: "R$ 59,90", pix: "R$ 56,91", promo2: "R$ 49,90",
+                        img: "aliviopep.png",
+                        protocolo: ["Óleo Flan", "Alívio P&P", "Bio Lift"],
+                        desc: "Alívio imediato para pernas, pés e músculos cansados. Loção refrescante com ação analgésica, anti-inflamatória e antiedematosa. Promove alívio imediato das dores musculares, reduz o inchaço e a sensação de pernas e pés cansados, proporcionando conforto, leveza e bem-estar. Ideal para massagens terapêuticas, pós-operatório e cuidados diários. Indicado também para gestantes.",
+                        ativos: "Extrato de Castanha-da-índia 30mg/g • Extrato de Arnica 20mg/g • Óleo de Andiroba 20mg/g • Ureia 20mg/g • Óleo Vegetal 20mg/g • Salicilato de Metila 10mg/g • Mentol 3mg/g", 
+                        dica: "Com a pele limpa, aplique nas regiões desejadas realizando leves manobras de massagem até completa absorção. Pode ser associado à drenagem linfática, massagens relaxantes e terapêuticas.", 
+                        rendimento: "80 aplicações",
                         isGestante: true
                     }
                 ]
