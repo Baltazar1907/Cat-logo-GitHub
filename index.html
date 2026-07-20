@@ -111,28 +111,27 @@
     <!-- Container Principal do Catálogo -->
     <div class="max-w-5xl mx-auto pt-24 print:pt-0" id="catalog-container">
 
-        <div class="bg-white min-h-[297mm] flex flex-col justify-between items-center text-center shadow-xl mb-12 print:shadow-none print:mb-0 relative overflow-hidden page-break">
+        <div class="bg-white min-h-[297mm] flex flex-col justify-between items-center text-center shadow-xl mb-12 relative overflow-hidden page-break">
             <img src="capa.png" alt="Modelo Capa Buona Vita" class="absolute inset-0 w-full h-full object-cover object-top z-0" onerror="this.style.display='none'">
             <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white/95 z-0 pointer-events-none"></div>
 
             <!-- Topo: Logo -->
-            <div class="z-10 w-full pt-16 md:pt-24 px-8 flex flex-col items-center">
-                <img src="logo.png" alt="Buona Vita - Dermocosméticos Científicos" class="w-80 md:w-[32rem] mix-blend-multiply drop-shadow-sm transition-transform hover:scale-105 duration-700" onerror="this.style.display='none'">
+            <div class="z-10 w-full pt-16 md:pt-24 print:pt-24 px-8 flex flex-col items-center">
+                <img src="logo.png" alt="Buona Vita - Dermocosméticos Científicos" class="w-80 md:w-[32rem] print:w-[32rem] mix-blend-multiply drop-shadow-sm transition-transform hover:scale-105 duration-700" onerror="this.style.display='none'">
             </div>
             
-            <!-- Espaçador invisível para deixar o centro livre (rosto da modelo) -->
+            <!-- Espaçador central -->
             <div class="flex-1 w-full z-10 pointer-events-none"></div>
 
-            <!-- Rodapé: Banner movido para baixo e frase -->
-            <div class="z-10 w-full pb-16 md:pb-24 px-4 flex flex-col items-center mt-auto">
+            <!-- Rodapé: Banner e Frase -->
+            <div class="z-10 w-full pb-16 md:pb-24 print:pb-24 px-4 flex flex-col items-center mt-auto">
                 
-                <!-- Banner de Feira agora no rodapé -->
                 <div class="mb-10 w-full max-w-3xl flex justify-center">
                     <div class="bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 p-[2px] rounded-full shadow-[0_15px_30px_rgba(0,131,123,0.3)] transform hover:scale-105 transition-all duration-500 w-fit">
-                        <div class="bg-brand-dark text-white px-6 md:px-10 py-3.5 rounded-full flex flex-col md:flex-row items-center gap-2 md:gap-4 font-medium tracking-[0.15em] text-xs md:text-sm uppercase text-center w-full h-full border border-brand-dark">
-                            <i data-lucide="sparkles" class="w-5 h-5 text-yellow-400 animate-pulse hidden md:block"></i>
+                        <div class="bg-brand-dark text-white px-6 md:px-10 print:px-10 py-3.5 rounded-full flex flex-col md:flex-row print:flex-row items-center gap-2 md:gap-4 print:gap-4 font-medium tracking-[0.15em] text-xs md:text-sm print:text-sm uppercase text-center w-full h-full border border-brand-dark">
+                            <i data-lucide="sparkles" class="w-5 h-5 text-yellow-400 animate-pulse hidden md:block print:block"></i>
                             <span class="leading-relaxed">
-                                Preços de feira aqui na fábrica <span class="font-extrabold text-yellow-400 block md:inline mt-1 md:mt-0">por tempo limitado</span>
+                                Preços de feira aqui na fábrica <span class="font-extrabold text-yellow-400 block md:inline print:inline mt-1 md:mt-0 print:mt-0">por tempo limitado</span>
                             </span>
                             <i data-lucide="sparkles" class="w-5 h-5 text-yellow-400 animate-pulse"></i>
                         </div>
@@ -140,7 +139,7 @@
                 </div>
 
                 <div class="w-16 h-1 bg-brand-teal mb-6"></div>
-                <p class="text-xl md:text-2xl text-brand-dark max-w-lg italic font-light leading-relaxed">
+                <p class="text-xl md:text-2xl print:text-2xl text-brand-dark max-w-lg italic font-light leading-relaxed">
                     "Amor em cada gesto, beleza em cada toque. Alta performance cosmética para esteticistas exigentes."
                 </p>
             </div>
@@ -743,69 +742,67 @@
             let htmlContent = '';
 
             catalogData.forEach((vol, index) => {
-                const isKitVolume = vol.title.includes("Volume 5"); // Regra visual para Kits
+                const isKitVolume = vol.title.includes("Volume 5"); 
 
-                // Lógica de injeção das Capas Panorâmicas (Banners)
+                // Banners reduzidos
                 let bannersHtml = '';
                 if (vol.banners && vol.banners.length > 0) {
-                    bannersHtml = `<div class="w-full flex flex-col gap-6 mt-10 px-4 md:px-10 print:mt-6 print:gap-4 print:avoid-break">`;
+                    bannersHtml = `<div class="avoid-break w-full flex flex-col gap-4 mt-6 px-4 md:px-10 print:px-10">`;
                     vol.banners.forEach(banner => {
                         const fallbackBannerUrl = `https://placehold.co/1024x430/0caea4/ffffff?text=CAPA:+${encodeURIComponent(banner.name)}`;
                         bannersHtml += `
-                            <div class="w-full rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative group bg-brand-light">
+                            <div class="w-full rounded-2xl overflow-hidden shadow-md border border-gray-100 relative group bg-brand-light">
                                 <img src="produtos/${banner.img}" 
                                      alt="${banner.name}" 
                                      class="w-full h-auto aspect-[1024/430] object-cover transition-transform duration-1000 group-hover:scale-105" 
                                      onerror="this.onerror=null; this.src='${fallbackBannerUrl}';">
-                                <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-3xl pointer-events-none"></div>
+                                <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl pointer-events-none"></div>
                             </div>
                         `;
                     });
                     bannersHtml += `</div>`;
                 }
 
+                // Header das páginas reduzido
                 htmlContent += `
-                    <div class="page-break bg-white mb-16 print:mb-12 relative border-b-8 border-brand-teal pb-8">
+                    <div class="page-break bg-white mb-8 relative border-b-8 border-brand-teal pb-4 shadow-2xl print:shadow-none print:border-none">
                         
-                        <div class="relative bg-brand-light rounded-3xl overflow-hidden print-bg-brand-light p-12 md:p-20 flex flex-col items-center text-center shadow-sm border border-gray-100">
-                            <div class="absolute top-[-40%] right-[-10%] w-96 h-96 bg-white opacity-40 blob-shape-3 pointer-events-none print:hidden"></div>
-                            <div class="absolute bottom-[-30%] left-[-10%] w-80 h-80 bg-brand-teal opacity-10 blob-shape-2 pointer-events-none print:hidden"></div>
-                            
-                            <div class="w-20 h-20 bg-brand-teal flex items-center justify-center text-white z-10 mb-6 shadow-lg print-bg-brand-teal blob-shape-4">
-                                <i data-lucide="${vol.icon}" class="w-10 h-10"></i>
+                        <div class="avoid-break w-full px-4 md:px-10 print:px-10 pt-8">
+                            <div class="relative bg-brand-light rounded-3xl overflow-hidden p-8 md:p-12 print:p-12 flex flex-col items-center text-center shadow-sm border border-gray-100">
+                                <div class="absolute top-[-40%] right-[-10%] w-96 h-96 bg-white opacity-40 blob-shape-3 pointer-events-none"></div>
+                                <div class="absolute bottom-[-30%] left-[-10%] w-80 h-80 bg-brand-teal opacity-10 blob-shape-2 pointer-events-none"></div>
+                                
+                                <div class="w-16 h-16 bg-brand-teal flex items-center justify-center text-white z-10 mb-4 shadow-md blob-shape-4">
+                                    <i data-lucide="${vol.icon}" class="w-8 h-8"></i>
+                                </div>
+                                
+                                <h3 class="text-brand-teal font-bold tracking-[0.2em] uppercase text-xs mb-2 z-10">${vol.title}</h3>
+                                <h2 class="text-2xl md:text-3xl print:text-3xl font-bold mb-4 text-brand-dark z-10 leading-tight">${vol.subtitle}</h2>
+                                <p class="text-gray-600 text-sm max-w-3xl z-10 leading-relaxed">${vol.description}</p>
                             </div>
-                            
-                            <h3 class="text-brand-teal font-bold tracking-[0.2em] uppercase text-sm mb-4 z-10">${vol.title}</h3>
-                            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-brand-dark z-10 leading-tight">${vol.subtitle}</h2>
-                            <p class="text-gray-600 text-lg max-w-3xl z-10 leading-relaxed">${vol.description}</p>
                         </div>
 
                         ${bannersHtml}
 
-                        <div class="py-10 flex flex-col gap-16 md:gap-24">
+                        <div class="py-8 flex flex-col gap-2">
                 `;
 
                 vol.products.forEach((prod, pIndex) => {
                     const isEven = pIndex % 2 === 0;
-                    const flexDir = isEven ? 'md:flex-row' : 'md:flex-row-reverse';
+                    const flexDir = isEven ? 'md:flex-row print:flex-row' : 'md:flex-row-reverse print:flex-row-reverse';
                     const blobClass = isEven ? 'blob-shape-1' : 'blob-shape-2';
 
-                    // Lógica para puxar imagens da pasta "produtos" (COM TRATAMENTO DE ESPAÇOS)
                     const fileName = prod.img ? prod.img : `${prod.name}.png`;
                     const imagePath = `produtos/${encodeURIComponent(fileName)}`;
-                    
-                    // URL de Backup caso a imagem falhe (Isto corrige o erro ReferenceError)
                     const fallbackUrl = `https://placehold.co/200x300/ffffff/0caea4?text=${encodeURIComponent(prod.name.split(' ')[0])}`;
 
-                    // Lógica para esconder o preço "De" se for N/A
                     const priceDeHtml = prod.de && prod.de !== "N/A" ? `
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest bg-gray-100 px-2 py-1 rounded">Tabela</span>
-                            <span class="text-sm font-semibold text-gray-400 line-through">${prod.de}</span>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">Tabela</span>
+                            <span class="text-xs font-semibold text-gray-400 line-through">${prod.de}</span>
                         </div>
                     ` : '';
 
-                    // Lógica Inteligente para Promoção 2ª Unidade ou Combo
                     let promoHtml = '';
                     let cartaoLabel = "Cartão";
                     
@@ -815,143 +812,135 @@
                         
                         promoHtml = `
                         <div class="col-span-2 mt-2">
-                            <div class="bg-yellow-400 text-brand-dark p-3 rounded-xl shadow-md flex justify-between items-center transform hover:scale-[1.02] transition-transform animate-pulse">
-                                <span class="text-[10px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-2 text-left leading-tight">
-                                    <i data-lucide="${isCombo ? 'package' : 'flame'}" class="w-4 h-4 shrink-0"></i>
+                            <div class="bg-yellow-400 text-brand-dark p-2 rounded-xl shadow-sm flex justify-between items-center transform hover:scale-[1.02] transition-transform animate-pulse">
+                                <span class="text-[9px] md:text-[10px] print:text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 text-left leading-tight">
+                                    <i data-lucide="${isCombo ? 'package' : 'flame'}" class="w-3 h-3 shrink-0"></i>
                                     ${isCombo ? 'OFERTA COMBO NO CARTÃO' : 'OFERTA A 2ª UNIDADE NO CARTÃO POR'}
                                 </span>
-                                <span class="text-lg font-extrabold shrink-0 pl-2">${prod.promo2}</span>
+                                <span class="text-sm md:text-base font-extrabold shrink-0 pl-2">${prod.promo2}</span>
                             </div>
                         </div>
                         `;
                     }
 
-                    // TIMELINE COMPONENT (Antes, Durante e Depois em Roxo Minimalista)
+                    // TIMELINE COMPACTADA
                     let protocolHtml = '';
-                    if (prod.protocolo && prod.protocolo.length === 3) {
+                    if (!isKitVolume && !vol.title.includes("Volume 6") && prod.protocolo && prod.protocolo.length === 3) {
                         protocolHtml = `
-                        <div class="mb-6 bg-purple-50 p-5 rounded-2xl border-l-4 border-purple-500 shadow-sm relative print:bg-purple-50/50 print:border-purple-300 mt-4">
-                            <h5 class="text-purple-900 font-bold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <div class="bg-purple-600 text-white p-1.5 rounded-full shadow-sm"><i data-lucide="layers" class="w-4 h-4"></i></div>
+                        <div class="mb-4 bg-purple-50 p-3 rounded-xl border-l-4 border-purple-500 shadow-sm relative mt-3">
+                            <h5 class="text-purple-900 font-bold text-[11px] uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <div class="bg-purple-600 text-white p-1 rounded-full shadow-sm"><i data-lucide="layers" class="w-3 h-3"></i></div>
                                 Dica do Especialista: Protocolo
                             </h5>
                             
-                            <div class="flex items-stretch justify-between gap-2">
-                                <!-- Passo 1: Antes -->
-                                <div class="flex flex-col flex-1 bg-white p-3 rounded-xl border border-purple-100 text-center shadow-sm justify-center">
-                                    <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider mb-1">Antes</span>
-                                    <span class="text-xs text-gray-700 font-medium leading-tight">${prod.protocolo[0]}</span>
+                            <div class="flex items-stretch justify-between gap-1">
+                                <div class="flex flex-col flex-1 bg-white p-2 rounded-lg border border-purple-100 text-center shadow-sm justify-center">
+                                    <span class="text-[9px] text-purple-400 font-bold uppercase tracking-wider mb-0.5">Antes</span>
+                                    <span class="text-[10px] text-gray-700 font-medium leading-tight">${prod.protocolo[0]}</span>
                                 </div>
                                 
-                                <!-- Seta -->
                                 <div class="text-purple-300 flex flex-col justify-center">
-                                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
                                 </div>
                                 
-                                <!-- Passo 2: Durante (Highlight em Roxo Sólido) -->
-                                <div class="flex flex-col flex-1 bg-purple-600 p-3 rounded-xl border border-purple-600 text-center shadow-md transform scale-105 z-10 justify-center print:border-2 print:border-purple-800">
-                                    <span class="text-[10px] text-purple-200 font-bold uppercase tracking-wider mb-1">Durante</span>
-                                    <span class="text-sm text-white font-bold leading-tight print:text-purple-900">${prod.protocolo[1]}</span>
+                                <div class="flex flex-col flex-1 bg-purple-600 p-2 rounded-lg border border-purple-600 text-center shadow-md transform scale-105 z-10 justify-center">
+                                    <span class="text-[9px] text-purple-200 font-bold uppercase tracking-wider mb-0.5">Durante</span>
+                                    <span class="text-[11px] text-white font-bold leading-tight">${prod.protocolo[1]}</span>
                                 </div>
                                 
-                                <!-- Seta -->
                                 <div class="text-purple-300 flex flex-col justify-center">
-                                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
                                 </div>
                                 
-                                <!-- Passo 3: Depois -->
-                                <div class="flex flex-col flex-1 bg-white p-3 rounded-xl border border-purple-100 text-center shadow-sm justify-center">
-                                    <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider mb-1">Depois</span>
-                                    <span class="text-xs text-gray-700 font-medium leading-tight">${prod.protocolo[2]}</span>
+                                <div class="flex flex-col flex-1 bg-white p-2 rounded-lg border border-purple-100 text-center shadow-sm justify-center">
+                                    <span class="text-[9px] text-purple-400 font-bold uppercase tracking-wider mb-0.5">Depois</span>
+                                    <span class="text-[10px] text-gray-700 font-medium leading-tight">${prod.protocolo[2]}</span>
                                 </div>
                             </div>
                         </div>
                         `;
                     }
 
-                    // Título dinâmico (menor para kits)
-                    const titleClass = isKitVolume ? "text-xl md:text-2xl" : "text-3xl md:text-4xl";
-                    const descClass = isKitVolume ? "text-sm text-gray-600" : "text-lg text-gray-500 italic";
+                    const titleClass = isKitVolume ? "text-lg md:text-xl print:text-xl" : "text-xl md:text-2xl print:text-2xl";
+                    const descClass = isKitVolume ? "text-[11px] text-gray-600" : "text-xs md:text-sm print:text-sm text-gray-600 italic";
 
+                    // ENVELOPE AVOID-BREAK - A MÁGICA ACONTECE AQUI
                     htmlContent += `
-                            <div class="avoid-break flex flex-col ${flexDir} gap-8 md:gap-16 items-center px-4 md:px-10 group relative print:py-6 border-b border-gray-100 pb-16 last:border-0">
-                                
-                                <div class="w-full md:w-5/12 flex flex-col items-center relative">
+                            <div class="avoid-break w-full border-b border-gray-100 pb-8 mb-4 last:border-0 last:mb-0">
+                                <div class="flex flex-col ${flexDir} gap-6 md:gap-8 print:gap-8 items-center px-4 md:px-10 print:px-10 group relative">
                                     
-                                    <div class="relative flex justify-center items-center w-full h-72 md:h-[26rem] lg:h-[30rem]">
-                                        <div class="absolute inset-0 bg-brand-light ${blobClass} opacity-80 print-bg-brand-light transition-all duration-700 group-hover:scale-105"></div>
-                                        <div class="absolute inset-4 bg-brand-teal opacity-10 ${blobClass} rotate-45 transition-all duration-700 group-hover:rotate-90"></div>
-                                        
-                                        <div class="relative z-10 flex items-center justify-center w-full h-full p-8 print:p-2">
-                                            <img src="${imagePath}" onerror="this.onerror=null; this.src='${fallbackUrl}';" class="max-h-full max-w-full object-contain mix-blend-multiply drop-shadow-[0_25px_25px_rgba(0,0,0,0.30)] transition-transform duration-500 group-hover:scale-110" alt="${prod.name}">
+                                    <div class="w-full md:w-2/5 print:w-2/5 flex flex-col items-center relative">
+                                        <div class="relative flex justify-center items-center w-full h-64 md:h-[22rem] print:h-[22rem] lg:h-[26rem] print:lg:h-[26rem]">
+                                            <div class="absolute inset-0 bg-brand-light ${blobClass} opacity-80 transition-all duration-700 group-hover:scale-105"></div>
+                                            <div class="absolute inset-4 bg-brand-teal opacity-10 ${blobClass} rotate-45 transition-all duration-700 group-hover:rotate-90"></div>
+                                            
+                                            <div class="relative z-10 flex items-center justify-center w-full h-full p-4">
+                                                <img src="${imagePath}" onerror="this.onerror=null; this.src='${fallbackUrl}';" class="max-h-full max-w-full object-contain mix-blend-multiply drop-shadow-[0_15px_15px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-110" alt="${prod.name}">
+                                            </div>
+                                            
+                                            <span class="absolute top-0 ${isEven ? 'right-0' : 'left-0'} bg-brand-dark text-white text-[10px] font-bold px-3 py-1.5 rounded-full z-20 shadow-sm">${prod.vol}</span>
                                         </div>
+                                    </div>
+
+                                    <div class="w-full md:w-3/5 print:w-3/5 flex flex-col justify-center">
+                                        <h4 class="${titleClass} font-bold text-brand-dark mb-2 leading-tight">${prod.name}</h4>
                                         
-                                        <span class="absolute top-2 ${isEven ? 'right-2 lg:-right-2' : 'left-2 lg:-left-2'} bg-brand-dark text-white text-xs font-bold px-5 py-2.5 rounded-full z-20 print-bg-brand-teal shadow-md">${prod.vol}</span>
-                                    </div>
-                                </div>
+                                        ${prod.isGestante ? `
+                                        <div class="flex items-center gap-1.5 mb-2 bg-pink-50 border border-pink-200 px-3 py-1 rounded-full w-fit">
+                                            <svg class="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 2C10.34 2 9 3.34 9 5C9 6.66 10.34 8 12 8C13.66 8 15 6.66 15 5C15 3.34 13.66 2 12 2ZM14.99 10C13.9 11.23 12 12.3 12 12.3C12 12.3 10.1 11.23 9.01 10H8C6.9 10 6 10.9 6 12V21C6 21.55 6.45 22 7 22H8V15H16V22H17C17.55 22 18 21.55 18 21V12C18 10.9 17.1 10 16 10H14.99Z"/>
+                                                <circle cx="12" cy="16" r="3.5" fill="#f472b6" opacity="0.6"/>
+                                            </svg>
+                                            <span class="text-[10px] font-bold text-pink-600 uppercase tracking-widest">Indicado também para gestantes</span>
+                                        </div>
+                                        ` : ''}
 
-                                <div class="w-full md:w-7/12 flex flex-col justify-center">
-                                    <h4 class="${titleClass} font-bold text-brand-dark print-text-brand-dark mb-4 leading-tight">${prod.name}</h4>
-                                    
-                                    ${prod.isGestante ? `
-                                    <div class="flex items-center gap-2 mb-4 bg-pink-50 border border-pink-200 px-4 py-2 rounded-full w-fit">
-                                        <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 2C10.34 2 9 3.34 9 5C9 6.66 10.34 8 12 8C13.66 8 15 6.66 15 5C15 3.34 13.66 2 12 2ZM14.99 10C13.9 11.23 12 12.3 12 12.3C12 12.3 10.1 11.23 9.01 10H8C6.9 10 6 10.9 6 12V21C6 21.55 6.45 22 7 22H8V15H16V22H17C17.55 22 18 21.55 18 21V12C18 10.9 17.1 10 16 10H14.99Z"/>
-                                            <circle cx="12" cy="16" r="3.5" fill="#f472b6" opacity="0.6"/>
-                                        </svg>
-                                        <span class="text-xs font-bold text-pink-600 uppercase tracking-widest">Indicado também para gestantes</span>
-                                    </div>
-                                    ` : ''}
-
-                                    <p class="${descClass} mb-6 leading-relaxed">${isKitVolume ? prod.desc : `"${prod.desc}"`}</p>
-                                    
-                                    ${prod.dica ? `
-                                    <div class="bg-[#eaf6f5] p-6 rounded-2xl border-l-4 border-brand-teal mb-6 relative print:bg-gray-50 print:border-gray-300 shadow-sm">
-                                        <h5 class="text-brand-dark font-bold text-sm uppercase tracking-widest mb-3 flex items-center gap-2">
-                                            <div class="bg-brand-teal text-white p-1.5 rounded-full"><i data-lucide="lightbulb" class="w-4 h-4"></i></div>
-                                            Modo de Uso
-                                        </h5>
-                                        <p class="text-sm text-gray-700 leading-relaxed font-medium">${prod.dica}</p>
+                                        <p class="${descClass} mb-4 leading-relaxed">${isKitVolume || vol.title.includes("Volume 6") ? prod.desc : `"${prod.desc}"`}</p>
                                         
-                                        ${prod.rendimento ? `
-                                        <div class="mt-4 flex items-center gap-2 text-brand-teal font-bold text-xs bg-white inline-flex px-4 py-2 rounded-full shadow-sm print:border print:border-gray-200">
-                                            <i data-lucide="bar-chart-2" class="w-4 h-4"></i> Rendimento: ${prod.rendimento}
-                                        </div>` : ''}
-                                    </div>
-                                    ` : ''}
-
-                                    <!-- Renderização da Timeline Roxa Minimalista abaixo do Modo de Uso -->
-                                    ${protocolHtml}
-
-                                    ${prod.ativos ? `
-                                    <div class="mb-4 mt-4 flex flex-wrap items-center gap-3">
-                                        <span class="bg-brand-light text-brand-dark font-bold uppercase tracking-widest text-[10px] px-3 py-1.5 rounded-full">Ativos</span>
-                                        <span class="text-sm text-gray-600 font-medium">${prod.ativos}</span>
-                                    </div>
-                                    ` : ''}
-                                    
-                                    <!-- Tabela de Preços (Condição Dinâmica) -->
-                                    <div class="mt-auto pt-6">
-                                        ${priceDeHtml}
-                                        
-                                        <div class="grid grid-cols-2 gap-4">
-                                            <!-- Preço Cartão -->
-                                            <div class="flex flex-col justify-center items-center text-center p-3 rounded-xl bg-brand-light border border-gray-200 relative">
-                                                <span class="text-[10px] text-brand-dark uppercase font-bold tracking-widest mb-1">${cartaoLabel}</span>
-                                                <span class="text-lg font-bold text-brand-dark">${prod.cartao}</span>
-                                            </div>
+                                        ${!isKitVolume && !vol.title.includes("Volume 6") && prod.dica ? `
+                                        <div class="bg-[#eaf6f5] p-4 rounded-xl border-l-4 border-brand-teal mb-4 relative shadow-sm">
+                                            <h5 class="text-brand-dark font-bold text-[11px] uppercase tracking-widest mb-2 flex items-center gap-2">
+                                                <div class="bg-brand-teal text-white p-1 rounded-full"><i data-lucide="lightbulb" class="w-3 h-3"></i></div>
+                                                Modo de Uso
+                                            </h5>
+                                            <p class="text-xs text-gray-700 leading-relaxed font-medium">${prod.dica}</p>
                                             
-                                            <!-- Preço PIX -->
-                                            <div class="flex flex-col justify-center items-center text-center p-3 rounded-xl bg-brand-teal text-white shadow-lg transform hover:scale-105 transition-transform duration-300 print:shadow-none relative">
-                                                ${!prod.promo2 && (!prod.de || prod.de !== "N/A") ? '<div class="absolute -top-3 text-[10px] font-bold bg-yellow-400 text-brand-dark px-2 py-0.5 rounded-full shadow-sm animate-pulse print:hidden whitespace-nowrap">Condição de Feira</div>' : ''}
-                                                <span class="text-[10px] uppercase font-bold tracking-widest opacity-90 flex items-center justify-center gap-1 mb-1">
-                                                    <i data-lucide="zap" class="w-3 h-3"></i> PIX
-                                                </span>
-                                                <span class="text-xl md:text-2xl font-extrabold leading-none">${prod.pix}</span>
-                                            </div>
+                                            ${prod.rendimento ? `
+                                            <div class="mt-3 flex items-center gap-1.5 text-brand-teal font-bold text-[10px] bg-white inline-flex px-3 py-1.5 rounded-full shadow-sm">
+                                                <i data-lucide="bar-chart-2" class="w-3 h-3"></i> Rendimento: ${prod.rendimento}
+                                            </div>` : ''}
+                                        </div>
+                                        ` : ''}
+
+                                        ${protocolHtml}
+
+                                        ${!isKitVolume && !vol.title.includes("Volume 6") && prod.ativos ? `
+                                        <div class="mb-2 mt-2 flex flex-wrap items-center gap-2">
+                                            <span class="bg-brand-light text-brand-dark font-bold uppercase tracking-widest text-[9px] px-2 py-1 rounded-full">Ativos</span>
+                                            <span class="text-[11px] text-gray-600 font-medium">${prod.ativos}</span>
+                                        </div>
+                                        ` : ''}
+                                        
+                                        <!-- Tabela de Preços Compactada -->
+                                        <div class="mt-auto pt-4">
+                                            ${priceDeHtml}
                                             
-                                            <!-- Renderiza a Oferta de 2ª Unidade ou Combo, se existir -->
-                                            ${promoHtml}
+                                            <div class="grid grid-cols-2 gap-2">
+                                                <div class="flex flex-col justify-center items-center text-center p-2 rounded-xl bg-brand-light border border-gray-200 relative">
+                                                    <span class="text-[9px] text-brand-dark uppercase font-bold tracking-widest mb-0.5">${cartaoLabel}</span>
+                                                    <span class="text-sm font-bold text-brand-dark">${prod.cartao}</span>
+                                                </div>
+                                                
+                                                <div class="flex flex-col justify-center items-center text-center p-2 rounded-xl bg-brand-teal text-white shadow-md transform hover:scale-105 transition-transform duration-300 relative">
+                                                    ${!prod.promo2 && (!prod.de || prod.de !== "N/A") ? '<div class="absolute -top-2 text-[9px] font-bold bg-yellow-400 text-brand-dark px-1.5 py-0.5 rounded-full shadow-sm animate-pulse whitespace-nowrap">Feira</div>' : ''}
+                                                    <span class="text-[9px] uppercase font-bold tracking-widest opacity-90 flex items-center justify-center gap-1 mb-0.5">
+                                                        <i data-lucide="zap" class="w-2.5 h-2.5"></i> PIX
+                                                    </span>
+                                                    <span class="text-base md:text-xl print:text-xl font-extrabold leading-none">${prod.pix}</span>
+                                                </div>
+                                                
+                                                ${promoHtml}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -966,20 +955,18 @@
             });
 
             htmlContent += `
-                <div class="page-break bg-brand-dark text-white p-16 text-center flex flex-col items-center justify-center rounded-3xl shadow-xl mt-16 mb-8 print:shadow-none print-bg-brand-teal relative overflow-hidden border-4 border-white ring-4 ring-brand-teal">
+                <div class="page-break bg-brand-dark text-white p-12 text-center flex flex-col items-center justify-center shadow-2xl print:shadow-none mb-8 relative overflow-hidden w-full h-[297mm] print:h-screen">
                     <div class="absolute -top-32 -left-32 w-80 h-80 bg-brand-teal opacity-20 blob-shape-1"></div>
                     <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-brand-light opacity-10 blob-shape-2"></div>
                     
-                    <h2 class="text-4xl font-bold mb-6 z-10 tracking-wide">Buona Vita</h2>
-                    <p class="text-brand-light mb-10 max-w-lg mx-auto z-10 text-lg">Inovação e ciência para profissionais que exigem resultados reais e segurança desde 1988.</p>
+                    <h2 class="text-3xl font-bold mb-4 z-10 tracking-wide">Buona Vita</h2>
+                    <p class="text-brand-light mb-8 max-w-sm mx-auto z-10 text-sm">Inovação e ciência para profissionais que exigem resultados reais e segurança desde 1988.</p>
                     
-                    <p class="text-xs text-brand-light opacity-60 z-10 mt-8 tracking-widest uppercase">Catálogo Referência Oficial • 63 Itens • Condições sujeitas a alteração.</p>
+                    <p class="text-[10px] text-brand-light opacity-60 z-10 mt-6 tracking-widest uppercase">Catálogo Referência Oficial • 63 Itens • Condições sujeitas a alteração.</p>
                 </div>
             `;
 
             container.innerHTML = htmlContent;
-
-            // Re-renderiza os ícones gerados dinamicamente
             lucide.createIcons();
         }
 
