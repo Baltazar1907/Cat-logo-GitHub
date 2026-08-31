@@ -91,6 +91,23 @@
         ::-webkit-scrollbar-track { background: #f1f2f2; }
         ::-webkit-scrollbar-thumb { background: #0caea4; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #00837b; }
+
+        /* Destaque exclusivo para lançamentos */
+        .launch-card {
+            background: linear-gradient(135deg, #faf5ff 0%, #ffffff 48%, #fff7ed 100%);
+            border: 2px solid #7c3aed !important;
+            border-radius: 1.75rem;
+            box-shadow: 0 18px 45px rgba(109, 40, 217, 0.16);
+        }
+        .launch-ribbon {
+            background: linear-gradient(90deg, #6d28d9 0%, #9333ea 55%, #f59e0b 100%);
+            color: white;
+        }
+        .launch-title { color: #6d28d9 !important; }
+        @media print {
+            .launch-card { border: 2px solid #6d28d9 !important; background: #faf5ff !important; }
+            .launch-ribbon { background: #6d28d9 !important; color: white !important; }
+        }
     </style>
 </head>
 
@@ -99,7 +116,7 @@
     <div class="no-print fixed top-0 left-0 w-full bg-white shadow-md z-50 p-4 flex justify-between items-center">
         <div class="flex items-center gap-2 text-brand-dark font-bold">
             <i data-lucide="book-open" class="text-brand-teal"></i>
-            Catálogo Buona Vita (63 Itens)
+            Catálogo Buona Vita (69 Itens)
         </div>
         <button onclick="window.print()"
             class="bg-brand-teal hover:bg-brand-dark text-white font-semibold py-2 px-6 rounded-full transition duration-300 flex items-center gap-2 shadow-lg">
@@ -311,6 +328,17 @@
                     { img: "capa_clareamento.png", name: "Clareamento" }
                 ],
                 products: [
+                    {
+                        name: "Complex Peel 60ml", vol: "60ml", de: "R$ 94,90", cartao: "R$ 56,90", pix: "R$ 54,06",
+                        img: "complex_peel.png",
+                        protocolo: ["Clear Peel", "Complex Peel", "Vita C+A"],
+                        desc: "Solução profissional vegana com <b>23% de ácidos</b>, desenvolvida para atuar de forma integrada em protocolos de <b>clareamento, rejuvenescimento e controle da acne</b>. A sinergia combina ação renovadora, antioxidante, despigmentante e queratolítica, auxiliando no refinamento da textura, uniformização do tom, luminosidade, desobstrução dos poros e melhora das marcas pós-inflamatórias.<br><br><b>Indicação:</b> tratamentos faciais, corporais e de estética íntima; acne, manchas e sinais de envelhecimento. Indicado para fototipos I a VI, conforme avaliação profissional.<br><b>Diferenciais:</b> combinação de PHA, BHA e ativos despigmentantes; ação multifuncional; fórmula vegana e dermatologicamente testada.",
+                        ativos: "Gluconolactona 100 mg/g (10%) • Niacinamida 30 mg/g • Ácido Ferúlico 30 mg/g • Ácido Tranexâmico 30 mg/g • Ácido Kójico 20 mg/g • Ácido Salicílico 20 mg/g.",
+                        dica: "Em protocolo profissional, aplicar uma fina camada sobre a região de tratamento, deixar agir por aproximadamente 10 minutos e não remover. Pode integrar protocolos sequenciais com Mandepeel, Clear Peel e Vita C+A, conforme avaliação profissional.",
+                        rendimento: "52 aplicações",
+                        isLaunch: true,
+                        launchLabel: "LANÇAMENTO 2026 • 23% DE ÁCIDOS"
+                    },
                     {
                         name: "Luminance 5X 30g", vol: "30g", de: "R$ 137,60", cartao: "R$ 79,90", pix: "R$ 75,91", promo2: "3 por R$ 69,90 cada",
                         img: "luminance.png",
@@ -655,6 +683,31 @@
                 description: "Todos os Kits oficiais da Linha Profissional e Tratamento para o paciente potencializar o resultado em casa.",
                 icon: "package",
                 products: [
+                    {
+                        name: "Kit Acne PRO", vol: "3 Itens", de: "R$ 309,90", cartao: "R$ 169,90", pix: "R$ 161,41",
+                        img: "kit_acne_pro.png",
+                        desc: "Protocolo profissional pensado para o gerenciamento da pele acneica, combinando renovação controlada, ação queratolítica, uniformização do tom e controle da oleosidade.<br><br><b>Contém:</b> Mandepeel, Complex Peel e Sérum ProSec.<br><br><b>Destaque:</b> associação de ácidos e ativos seborreguladores para trabalhar acne, poros, textura e marcas pós-inflamatórias de forma integrada."
+                    },
+                    {
+                        name: "Kit Clareamento SKIN REVEAL 3.0", vol: "4 Itens", de: "R$ 456,90", cartao: "R$ 229,90", pix: "R$ 218,41",
+                        img: "kit_skin_reveal_3_0.png",
+                        desc: "Protocolo profissional de peeling sequencial voltado à renovação, clareamento e rejuvenescimento da pele, com proposta de tratamento facial, corporal e íntimo.<br><br><b>Contém:</b> Clear Peel, Mandepeel, Complex Peel e Vita C+A.<br><br><b>Destaque:</b> estratégia de renovação progressiva que combina ácidos, ação despigmentante, antioxidante e peeling enzimático."
+                    },
+                    {
+                        name: "Kit Day e Night", vol: "2 Itens", de: "R$ 349,40", cartao: "R$ 172,90", pix: "R$ 164,26",
+                        img: "kit_day_e_night.png",
+                        desc: "Dupla de cuidados para uma rotina de rejuvenescimento e manutenção da hidratação, firmeza e tonicidade da pele ao longo do dia e da noite.<br><br><b>Contém:</b> Gel Creme Nanocápsulas 50 g e Tenso Active 50 g.<br><br><b>Destaque:</b> hidratação nanotecnológica associada a ativos tensores e firmadores para complementar protocolos anti-age."
+                    },
+                    {
+                        name: "Kit Estética Íntima PRO", vol: "3 Itens", de: "R$ 293,00", cartao: "R$ 159,90", pix: "R$ 151,91",
+                        img: "kit_estetica_intima_pro.png",
+                        desc: "Kit profissional para protocolos de estética íntima voltados à renovação, uniformização do tom e melhora da firmeza e qualidade da pele.<br><br><b>Contém:</b> Mandepeel, Complex Peel e Sérum DMAE.<br><br><b>Destaque:</b> combinação de renovação química controlada, ativos despigmentantes e ação tensora."
+                    },
+                    {
+                        name: "Kit Ácidos", vol: "3 Itens", de: "R$ 297,90", cartao: "R$ 149,90", pix: "R$ 142,41",
+                        img: "kit_acidos.png",
+                        desc: "Seleção profissional de peelings químicos para ampliar as possibilidades de protocolos de renovação, acne, textura, oleosidade e uniformização do tom.<br><br><b>Contém:</b> Clear Peel, Mandepeel e Complex Peel.<br><br><b>Destaque:</b> três soluções complementares para personalizar o tratamento conforme fototipo, objetivo e avaliação profissional."
+                    },
                     { 
                         name: "Kit Acne Skin Care", vol: "2 Itens", de: "R$ 256,70", cartao: "R$ 129,90", pix: "R$ 123,41", 
                         img: "kit_acne_skincare.png",
@@ -796,6 +849,18 @@
                     const imagePath = `produtos/${encodeURIComponent(fileName)}`;
                     const fallbackUrl = `https://placehold.co/200x300/ffffff/0caea4?text=${encodeURIComponent(prod.name.split(' ')[0])}`;
 
+                    const productImageHtml = prod.images && prod.images.length
+                        ? `<div class="relative z-10 grid ${prod.images.length >= 4 ? 'grid-cols-4' : prod.images.length === 3 ? 'grid-cols-3' : 'grid-cols-2'} gap-1 md:gap-2 print:gap-2 items-end justify-items-center w-full h-full p-3">
+                            ${prod.images.map((imgName, imgIndex) => {
+                                const imgPath = `produtos/${encodeURIComponent(imgName)}`;
+                                const imgFallback = `https://placehold.co/150x260/ffffff/0caea4?text=${encodeURIComponent('Kit')}`;
+                                return `<img src="${imgPath}" onerror="this.onerror=null; this.src='${imgFallback}';" class="max-h-[80%] max-w-full object-contain mix-blend-multiply drop-shadow-[0_10px_10px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-105" alt="${prod.name} - item ${imgIndex + 1}">`;
+                            }).join('')}
+                           </div>`
+                        : `<div class="relative z-10 flex items-center justify-center w-full h-full p-4">
+                            <img src="${imagePath}" onerror="this.onerror=null; this.src='${fallbackUrl}';" class="max-h-full max-w-full object-contain mix-blend-multiply drop-shadow-[0_15px_15px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-110" alt="${prod.name}">
+                           </div>`;
+
                     const priceDeHtml = prod.de && prod.de !== "N/A" ? `
                         <div class="flex items-center gap-2 mb-2">
                             <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">Tabela</span>
@@ -866,24 +931,34 @@
 
                     // ENVELOPE AVOID-BREAK - A MÁGICA ACONTECE AQUI
                     htmlContent += `
-                            <div class="avoid-break w-full border-b border-gray-100 pb-8 mb-4 last:border-0 last:mb-0">
-                                <div class="flex flex-col ${flexDir} gap-6 md:gap-8 print:gap-8 items-center px-4 md:px-10 print:px-10 group relative">
+                            <div class="avoid-break w-full ${prod.isLaunch ? 'launch-card py-6 mb-8 relative' : 'border-b border-gray-100 pb-8 mb-4 last:border-0 last:mb-0'}">
+                                ${prod.isLaunch ? `
+                                <div class="launch-ribbon absolute top-0 left-0 right-0 py-2 px-4 text-center text-[11px] md:text-sm print:text-sm font-black uppercase tracking-[0.18em] z-30 rounded-t-[1.55rem]">
+                                    ✦ ${prod.launchLabel || 'LANÇAMENTO'} ✦
+                                </div>
+                                ` : ''}
+                                <div class="flex flex-col ${flexDir} gap-6 md:gap-8 print:gap-8 items-center px-4 md:px-10 print:px-10 group relative ${prod.isLaunch ? 'pt-8' : ''}">
                                     
                                     <div class="w-full md:w-2/5 print:w-2/5 flex flex-col items-center relative">
                                         <div class="relative flex justify-center items-center w-full h-64 md:h-[22rem] print:h-[22rem] lg:h-[26rem] print:lg:h-[26rem]">
                                             <div class="absolute inset-0 bg-brand-light ${blobClass} opacity-80 transition-all duration-700 group-hover:scale-105"></div>
                                             <div class="absolute inset-4 bg-brand-teal opacity-10 ${blobClass} rotate-45 transition-all duration-700 group-hover:rotate-90"></div>
                                             
-                                            <div class="relative z-10 flex items-center justify-center w-full h-full p-4">
-                                                <img src="${imagePath}" onerror="this.onerror=null; this.src='${fallbackUrl}';" class="max-h-full max-w-full object-contain mix-blend-multiply drop-shadow-[0_15px_15px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-110" alt="${prod.name}">
-                                            </div>
+                                            ${productImageHtml}
                                             
                                             <span class="absolute top-0 ${isEven ? 'right-0' : 'left-0'} bg-brand-dark text-white text-[10px] font-bold px-3 py-1.5 rounded-full z-20 shadow-sm">${prod.vol}</span>
                                         </div>
                                     </div>
 
                                     <div class="w-full md:w-3/5 print:w-3/5 flex flex-col justify-center">
-                                        <h4 class="${titleClass} font-bold text-brand-dark mb-2 leading-tight">${prod.name}</h4>
+                                        <h4 class="${titleClass} font-bold ${prod.isLaunch ? 'launch-title' : 'text-brand-dark'} mb-2 leading-tight">${prod.name}</h4>
+                                        ${prod.isLaunch ? `
+                                        <div class="flex flex-wrap gap-2 mb-3">
+                                            <span class="bg-violet-100 text-violet-800 border border-violet-200 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">23% de ácidos</span>
+                                            <span class="bg-amber-100 text-amber-800 border border-amber-200 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Vegano</span>
+                                            <span class="bg-fuchsia-100 text-fuchsia-800 border border-fuchsia-200 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Fototipos I–VI</span>
+                                        </div>
+                                        ` : ''}
                                         
                                         ${prod.isGestante ? `
                                         <div class="flex items-center gap-1.5 mb-2 bg-pink-50 border border-pink-200 px-3 py-1 rounded-full w-fit">
@@ -998,7 +1073,7 @@
                     </div>
                     <!-- FIM DA TABELA DE FRETE -->
 
-                    <p class="text-[10px] text-brand-light opacity-60 z-10 mt-10 tracking-widest uppercase">Catálogo Referência Oficial • 63 Itens • Condições sujeitas a alteração.</p>
+                    <p class="text-[10px] text-brand-light opacity-60 z-10 mt-10 tracking-widest uppercase">Catálogo Referência Oficial • 69 Itens • Condições sujeitas a alteração.</p>
                 </div>
             `;
 
@@ -1017,7 +1092,7 @@
             catalogData.forEach(vol => {
                 context += `Categoria: ${vol.title} - ${vol.subtitle}\n`;
                 vol.products.forEach(p => {
-                    context += `- Produto: ${p.name} (${p.vol}) | Ativos: ${p.ativos} | Indicação: ${p.desc}\n`;
+                    context += `- Produto: ${p.name} (${p.vol})${p.ativos ? ` | Ativos: ${p.ativos}` : ''} | Indicação: ${p.desc}\n`;
                 });
                 context += '\n';
             });
@@ -1127,7 +1202,7 @@
 
             <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto flex flex-col gap-3 text-sm">
                 <div class="bg-white border border-gray-100 text-brand-dark p-3 rounded-xl rounded-tl-none self-start max-w-[90%] shadow-sm">
-                    Olá, colega esteticista! 🌿 Sou a <strong>Buona IA</strong>. Analisei todo este catálogo (63 itens) e estou pronta para te ajudar a criar protocolos, encontrar produtos ideais para suas pacientes ou tirar dúvidas sobre nossos ativos científicos.
+                    Olá, colega esteticista! 🌿 Sou a <strong>Buona IA</strong>. Analisei todo este catálogo (69 itens) e estou pronta para te ajudar a criar protocolos, encontrar produtos ideais para suas pacientes ou tirar dúvidas sobre nossos ativos científicos.
                     <br><br>Como posso ajudar a elevar os resultados da sua clínica hoje?
                 </div>
             </div>
